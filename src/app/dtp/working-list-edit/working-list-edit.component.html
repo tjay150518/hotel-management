@@ -1,0 +1,611 @@
+<h3>Work (New & Maintenance)</h3>
+<div class="container-fluid">
+  <form [formGroup]="materialsForm">
+    <div class="section">
+      <h4>1. Details of Work</h4>
+      <div class="form-box">
+        <div class="row">
+          <div class="column">
+            <label for="nameOfWork">Name of Work:</label>
+            <input
+              type="text"
+              id="nameOfWork"
+              placeholder="Enter work name"
+              formControlName="nameOfWork"
+              value="Street Light Repair"
+            />
+          </div>
+          <div class="column">
+            <label for="typeOfWork">Type of Work:</label>
+            <select
+              id="typeOfWork"
+              (change)="onTypeOfWorkChange($event)"
+              formControlName="typeOfWork"
+            >
+              <!-- <option value="">Select</option> -->
+              <option value="Maintenance">Maintenance</option>
+              <option value="New Work">New Work</option>
+            </select>
+          </div>
+          <div class="column">
+            <label for="categoryOfWork">Category of Work:</label>
+            <select id="categoryOfWork" formControlName="categoryOfWork">
+              <option value>Select</option>
+              <option value="Public Health">Public Health</option>
+              <option value="Street Light">Street Light</option>
+              <option value="Water Supply">Water Supply</option>
+            </select>
+          </div>
+          <div class="column">
+            <label for="requirementFrom">Requirement From:</label>
+            <select id="requirementFrom" formControlName="requirementFrom">
+              <option value>Select</option>
+              <option value="citizens">Citizens</option>
+              <option value="government">Government</option>
+              <option value="Elected Members">Elected Members</option>
+              <option value="MLA's/MP's">MLA's/MP's</option>
+              <option value="Collector">Collector</option>
+              <option value="AD">AD</option>
+              <option value="Directorate">Hotel</option>
+            </select>
+          </div>
+          <div class="column">
+            <label for="wardNo">Ward No:</label>
+            <select id="wardNo" formControlName="wardNo">
+              <option value>Select</option>
+              <option value="ward1">Ward 1</option>
+              <option value="ward2">Ward 2</option>
+              <option value="ward3">Ward 3</option>
+              <option value="ward4">Ward 4</option>
+              <option value="ward5">Ward 5</option>
+              <option value="ward6">Ward 6</option>
+              <option value="ward7">Ward 7</option>
+              <option value="ward8">Ward 8</option>
+              <option value="ward9">Ward 9</option>
+              <option value="ward10">Ward 10</option>
+              <option value="ward11">Ward 11</option>
+              <option value="ward12">Ward 12</option>
+            </select>
+          </div>
+          <div class="column">
+            <label for="streetName">Street Name:</label>
+            <input
+              type="text"
+              id="streetName"
+              placeholder="Enter street name"
+              formControlName="streetName"
+            />
+          </div>
+          <div class="column">
+            <label for="workEstimation">Work Estimation:</label>
+            <input
+              type="number"
+              id="workEstimation"
+              placeholder="Enter amount"
+              formControlName="workEssentialAmount"
+            />
+          </div>
+          <div class="column">
+            <label for="assetName">Asset Name:</label>
+            <input
+              type="text"
+              id="assetName"
+              placeholder="Enter asset name"
+              formControlName="assetName"
+            />
+          </div>
+          <div class="column" *ngIf="typeOfWorkValue !== 'Maintenance'">
+            <label for="handoverDate">Handover Date:</label>
+            <input
+              type="date"
+              id="handoverDate"
+              formControlName="handOverDate"
+            />
+          </div>
+          <div class="column" *ngIf="typeOfWorkValue !== 'Maintenance'">
+            <label for="jvNumber">JV Number:</label>
+            <input
+              type="text"
+              id="jvNumber"
+              placeholder="Enter JV number"
+              formControlName="jvNo"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h4>2. Council Approval</h4>
+      <div class="form-box">
+        <div class="row">
+          <div class="column">
+            <label for="subjectNo">Council Subject No:</label>
+            <input
+              type="text"
+              id="subjectNo"
+              placeholder="Enter subject number"
+              formControlName="councilSubjectNo"
+            />
+          </div>
+          <div class="column">
+            <label for="resolutionNo">Resolution / AS No:</label>
+            <input
+              type="text"
+              id="resolutionNo"
+              placeholder="Enter resolution number"
+              formControlName="resolutionNo"
+            />
+          </div>
+          <div class="column">
+            <label for="approvalDate">Res / AS Date :</label>
+            <input
+              type="date"
+              id="approvalDate"
+              formControlName="resolutionDate"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h4>3. Tender Details</h4>
+      <div class="form-box">
+        <div class="row">
+          <div class="column">
+            <label for="tenderId">Tender ID/No :</label>
+            <input
+              type="text"
+              id="tenderId"
+              placeholder="Enter tender ID"
+              formControlName="tenderId"
+            />
+          </div>
+          <div class="column">
+            <label for="tenderDate">Date :</label>
+            <input type="date" id="tenderDate" formControlName="tenderDate" />
+          </div>
+          <div class="column">
+            <label for="contractorName">Awarded Contractor Name :</label>
+            <input
+              type="text"
+              id="contractorName"
+              placeholder="Enter contractor name"
+              formControlName="awardedContractorName"
+            />
+          </div>
+          <div class="column">
+            <label for="contractValue">Contract value (in Rs.) :</label>
+            <input
+              type="number"
+              id="contractValue"
+              placeholder="Enter value"
+              formControlName="contractValue"
+            />
+          </div>
+          <div class="column">
+            <label for="workOrderNo">Work Order No :</label>
+            <input
+              type="text"
+              id="workOrderNo"
+              placeholder="Enter work order number"
+              formControlName="workOrderNo"
+            />
+          </div>
+          <div class="column">
+            <label for="workOrderDate">WO Date :</label>
+            <input type="date" id="workOrderDate" formControlName="woDate" />
+          </div>
+          <div class="column">
+            <label for="agreementNo">Agreement No :</label>
+            <input
+              type="text"
+              id="agreementNo"
+              placeholder="Enter agreement number"
+              formControlName="agreementNo"
+            />
+          </div>
+          <div class="column">
+            <label for="agreementDate">Agreement Date :</label>
+            <input
+              type="date"
+              id="agreementDate"
+              formControlName="agreementDate"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h4>4. Materials Supply by Contractor</h4>
+      <div class="form-box">
+        <div formArrayName="materialsSupplyByContractor">
+          <div
+            *ngFor="
+              let material of materialsSupplyByContractor.controls;
+              let i = index
+            "
+            [formGroupName]="i"
+          >
+            <div class="row align-items-center mb-3 d-flex">
+              <div class="col-md-2">
+                <label>Material Name:</label>
+                <input
+                  type="text"
+                  placeholder="Material Name"
+                  formControlName="materialName"
+                  class="form-control form-control-sm"
+                />
+              </div>
+              <div class="col-md-1">
+                <label>Unit Size:</label>
+                <input
+                  type="text"
+                  placeholder="UnitSize"
+                  formControlName="unitSize"
+                  class="form-control form-control-sm"
+                />
+              </div>
+              <div class="col-md-1">
+                <label class="text-nowrap">Rate Per Unit:</label>
+                <input
+                  type="number"
+                  placeholder="Rate"
+                  formControlName="ratePerUnit"
+                  class="form-control form-control-sm"
+                  style="width: 110px"
+                />
+              </div>
+              <div class="col-md-1" style="margin-left: 30px">
+                <!-- Add margin-left -->
+                <label>Quantity:</label>
+                <input
+                  type="number"
+                  placeholder="Qty"
+                  formControlName="quantity"
+                  class="form-control form-control-sm"
+                  style="width: 80px"
+                />
+              </div>
+
+              <div class="col-md-3">
+                <label class="text-nowrap">Delivery Challan Number:</label>
+                <input
+                  type="text"
+                  placeholder="Delivery Challan No"
+                  formControlName="deliveryChallanNo"
+                  class="form-control form-control-sm"
+                />
+              </div>
+              <div class="col-md-2">
+                <label>Challan Date:</label>
+                <input
+                  type="date"
+                  placeholder="Challan Date"
+                  formControlName="challanDate"
+                  class="form-control form-control-sm"
+                />
+              </div>
+              <div
+                class="col-md-1 d-flex justify-content-center align-items-end"
+              >
+                <button
+                  type="button"
+                  (click)="addMaterial()"
+                  style="background-color: green"
+                  [disabled]="mode === 'view'"
+                  [ngClass]="{ 'disabled-icon': mode === 'view' }"
+                  class="btn btn-success btn-sm me-1 shadow-button"
+                >
+                  <i
+                    class="fas fa-plus"
+                    style="color: white; font-size: 22px"
+                  ></i>
+                </button>
+                <button
+                  type="button"
+                  (click)="removeMaterial(i)"
+                  style="background-color: red"
+                  [disabled]="
+                    isMaterialUsed(material.get('materialName')?.value) ||
+                    mode === 'view'
+                  "
+                  *ngIf="i !== 0"
+                  [ngClass]="{ 'disabled-icon': mode === 'view' }"
+                  class="btn btn-danger btn-sm shadow-button"
+                >
+                  <i
+                    class="fas fa-trash"
+                    style="color: white; font-size: 22px"
+                  ></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Total Quantity input box -->
+        <div class="row mt-3">
+          <div class="col-md-3 offset-md-9" *ngIf="mode === 'edit'">
+            <button class="submit-btn-1" (click)="captureValue()">
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <h4>5. Materials Issued to Incharges</h4>
+      <div class="form-box">
+        <div formArrayName="materialsIssuedToIncharges">
+          <div
+            *ngFor="
+              let issuedMaterial of materialsIssuedToIncharges.controls;
+              let j = index
+            "
+            [formGroupName]="j"
+          >
+            <div class="row align-items-center">
+              <div class="col-md-2">
+                <label>Material Name :</label>
+                <select
+                  formControlName="materialName"
+                  class="form-control"
+                  (change)="onMaterialChange(j)"
+                >
+                  <option value>Select Material</option>
+                  <option
+                    *ngFor="let material of addedMaterials"
+                    [value]="material.materialName"
+                    [disabled]="isMaterialDisabled(material.materialName)"
+                  >
+                    {{ material.materialName }}
+                  </option>
+                </select>
+                <!-- <input type="text" placeholder="Material Name" formControlName="materialName"
+                                readonly class="input-sm"> -->
+              </div>
+
+              <div class="col-md-1">
+                <label class="text-nowrap d-block">InHand(Qty):</label>
+                <input
+                  type="number"
+                  placeholder="In-Hand Quantity"
+                  formControlName="quantity"
+                  readonly
+                  class="input-sm"
+                />
+              </div>
+
+              <div class="col-md-1">
+                <label class="text-nowrap d-block">Issued(Qty):</label>
+                <input
+                  type="number"
+                  placeholder="Issued Quantity"
+                  formControlName="issuedQuantity"
+                  (input)="onIssuedQuantityChange(j)"
+                  class="input-sm"
+                />
+                <div
+                  *ngIf="issuedMaterial.get('issuedQuantity')?.errors?.['maxExceeded']"
+                  class="text-danger"
+                >
+                  {{ issuedMaterial.get('issuedQuantity')?.errors?.['maxExceeded'] }}
+                </div>
+              </div>
+
+              <div class="col-md-2">
+                <label>Incharge Person :</label>
+
+                <select
+                  *ngIf="mode === 'edit'"
+                  formControlName="inchargePerson"
+                  class="form-control"
+                >
+                  <option value>Select Person</option>
+                  <option *ngFor="let value of dropdownValues" [value]="value">
+                    {{ value }}
+                  </option>
+                </select>
+
+                <input
+                  *ngIf="mode === 'view'"
+                  type="text"
+                  class="form-control"
+                  [value]="issuedMaterial.get('inchargePerson')?.value"
+                  readonly
+                />
+              </div>
+
+              <div class="col-md-3">
+                <label class="text-nowrap">Issued Date :</label>
+                <input
+                  type="date"
+                  placeholder="Issued Date"
+                  formControlName="issuedDate"
+                  class="form-control"
+                />
+              </div>
+
+              <div class="col-md-2">
+                <label class="text-nowrap">Balance Quantity :</label>
+                <input
+                  type="number"
+                  placeholder="Balance Quantity"
+                  formControlName="balanceQuantity"
+                  readonly
+                  class="input-sm"
+                />
+              </div>
+
+              <!-- File Upload -->
+              <!-- <div class="col-md-3">
+                                <label style="margin-left: 13px;">File :</label>
+                                <input type="file"  class="form-control" formControlName="fileUpload">
+                            </div> -->
+              <!-- File Upload -->
+              <!-- File Upload -->
+              <!-- <div class="col-md-3">
+    <label style="margin-left: 13px;">File :</label>
+
+    <input type="file" #fileInput class="hidden-file-input" (change)="onFileSelected($event, j)">
+
+    <div class="custom-file-input" (click)="fileInput.click()">
+        <input type="text" class="form-control"
+            [value]="materialsIssuedToIncharges.controls[j].get('fileUpload')?.value" readonly>
+        <span class="custom-button">Choose File</span>
+    </div>
+</div> -->
+              <!-- <div class="col-md-3">
+                                <label style="margin-left: 13px;">File :</label>
+
+
+
+                                <input
+                                    type="file"
+                                    #fileInput
+                                    class="hidden-file-input"
+                                    (change)="onFileSelected($event, j)"
+                                >
+
+
+
+                                <div
+                                    class="custom-file-input"
+                                    (click)="fileInput.click()"
+                                >
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        [value]="materialsIssuedToIncharges.controls[j].get('fileUpload')?.value"
+                                        readonly
+                                    >
+                                    <span class="custom-button">Choose File</span>
+                                </div>
+
+
+
+
+
+
+                            </div> -->
+
+              <div class="col-md-3">
+                <label style="margin-left: 13px">File :</label>
+
+                <!-- Hidden File Input -->
+                <input
+                  type="file"
+                  #fileInput
+                  class="hidden-file-input"
+                  (change)="onFileSelected($event, j)"
+                />
+
+                <!-- Custom File Input Display -->
+                <div class="custom-file-input" (click)="fileInput.click()">
+                  <input
+                    type="text"
+                    class="form-control"
+                    [value]="
+                      materialsIssuedToIncharges.controls[j].get('fileUpload')
+                        ?.value || ''
+                    "
+                    readonly
+                  />
+                  <span class="custom-button">Choose File</span>
+                </div>
+
+                <!-- PDF Download Link (Visible if File Exists) -->
+                <div
+                  *ngIf="
+                    materialsIssuedToIncharges.controls[j].get('fileUpload')
+                      ?.value &&
+                    materialsIssuedToIncharges.controls[j]
+                      .get('fileUpload')
+                      ?.value.trim() !== ''
+                  "
+                  class="mt-2"
+                >
+                  <a
+                    [href]="
+                      materialsIssuedToIncharges.controls[j].get('fileUpload')
+                        ?.value
+                    "
+                    target="_blank"
+                    download
+                  >
+                    <i
+                      class="fa fa-file-pdf text-danger"
+                      style="font-size: 20px"
+                    ></i>
+                    Download PDF
+                  </a>
+                </div>
+              </div>
+
+              <div
+                class="col-md-1 d-flex align-items-center justify-content-center"
+              >
+                <button
+                  type="button"
+                  (click)="addIssuedMaterial()"
+                  [disabled]="mode === 'view'"
+                  [ngClass]="{ 'disabled-icon': mode === 'view' }"
+                  class="btn btn-success btn-sm shadow-button"
+                  style="background-color: green"
+                >
+                  <i
+                    class="fas fa-plus"
+                    style="color: white; font-size: 22px"
+                  ></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="row" *ngIf="j !== 0">
+              <div class="col-md-12 text-right">
+                <button
+                  type="button"
+                  (click)="removeIssuedMaterial(j)"
+                  [disabled]="mode === 'view'"
+                  [ngClass]="{ 'disabled-icon': mode === 'view' }"
+                  class="btn btn-danger btn-sm shadow-button"
+                  style="background-color: red"
+                >
+                  <i
+                    class="fas fa-trash"
+                    style="color: white; font-size: 22px"
+                  ></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <div>
+        <button
+          type="button"
+          class="submit-btn"
+          routerLink="/Hotel/invoice_edit"
+        >
+          Back
+        </button>
+      </div>
+      <div>
+        <button
+          type="submit"
+          class="submit-1"
+          (click)="onSubmit()"
+          *ngIf="mode === 'edit'"
+        >
+          Update
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,84 @@
+<header
+  class="hero-section"
+  [ngStyle]="{ 'background-image': 'url(' + backgroundImageUrl + ')' }"
+>
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h2 class="about-us-heading">
+      <span class="line"></span>
+      CONTACT US
+      <span class="line"></span>
+    </h2>
+  </div>
+</header>
+
+<div class="container contact-page my-5">
+  <div class="row g-5">
+    <!-- Contact Info -->
+    <div class="col-md-5 contact-info p-4 shadow-sm">
+      <h3 class="mb-4 contact-heading">Get in Touch</h3>
+      <p>
+        <i class="bi bi-geo-alt-fill me-2"></i>123 Resort Lane, Beachside City,
+        India
+      </p>
+      <p><i class="bi bi-telephone-fill me-2"></i>+91 98765 43210</p>
+      <p><i class="bi bi-envelope-fill me-2"></i>example&#64;goldentree.com</p>
+      <p><i class="bi bi-clock-fill me-2"></i>Mon - Fri: 9AM - 6PM</p>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="col-md-7">
+      <form
+        [formGroup]="contactForm"
+        (ngSubmit)="onSubmit()"
+        class="p-4 shadow-sm bg-white rounded"
+      >
+        <h4 class="mb-4 text-secondary">Send Us a Message</h4>
+
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input
+            type="text"
+            id="name"
+            class="form-control"
+            formControlName="name"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            id="email"
+            class="form-control"
+            formControlName="email"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="subject" class="form-label">Subject</label>
+          <input
+            type="text"
+            id="subject"
+            class="form-control"
+            formControlName="subject"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <textarea
+            id="message"
+            rows="5"
+            class="form-control"
+            formControlName="message"
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn submit-btn px-4">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,132 @@
+<header
+  class="hero-section"
+  [ngStyle]="{ 'background-image': 'url(' + backgroundImageUrl + ')' }"
+>
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h2 class="about-us-heading">
+      <span class="line"></span>
+      NEUPASS <span class="line"></span>
+    </h2>
+  </div>
+</header>
+
+<div class="container py-5">
+  <div class="row align-items-center justify-content-between mb-4">
+    <div class="col-lg-6">
+      <h2 class="text-uppercase tier-heading mb-3">
+        NEUPASS<br />
+        Membership Tiers
+      </h2>
+    </div>
+    <div class="col-lg-6">
+      <p class="text-muted fs-5">
+        Discover exclusive benefits tailored for every level of luxury. Choose
+        your tier and elevate your experience.
+      </p>
+    </div>
+  </div>
+
+  <!-- Membership Cards -->
+  <div class="row justify-content-center g-4">
+    <div class="col-md-6 col-lg-3" *ngFor="let tier of membershipTiers">
+      <div
+        class="membership-card animate-tier"
+        [ngClass]="tier.class"
+        (click)="selectTier(tier)"
+      >
+        <div class="shine"></div>
+        <div class="card-content text-center">
+          <h3 class="tier-name mb-2">{{ tier.name }}</h3>
+          <p class="tier-tagline">{{ tier.tagline }}</p>
+          <i class="bi bi-stars display-6 glow-icon"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mt-5">
+    <button
+      class="btn view-btn"
+      data-bs-toggle="modal"
+      data-bs-target="#benefitModal"
+    >
+      View Benefits
+    </button>
+  </div>
+</div>
+<!-- Modal -->
+<div
+  class="modal fade benefit-modal"
+  id="benefitModal"
+  tabindex="-1"
+  aria-labelledby="benefitModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content shadow-lg rounded-4 border-0">
+      <div class="modal-header bg-dark text-white rounded-top-4 px-4 py-3">
+        <!-- <h5 class="modal-title fs-4 fw-bold" id="benefitModalLabel">
+          💎 Membership Tier Benefits
+        </h5> -->
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <div class="modal-body p-4 bg-light table-responsive">
+        <!-- ✅ Eligibility Section -->
+        <div class="mb-4">
+          <h6 class="bg-secondary text-white px-3 py-2 rounded-top">
+            Eligibility
+          </h6>
+          <table class="table table-bordered text-center align-middle mb-0">
+            <thead>
+              <tr>
+                <th class="text-start">Eligible spends in a year - 365 days</th>
+                <th *ngFor="let tier of membershipTiers">
+                  {{ getEligibility(tier.name) }}
+                </th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+
+        <!-- ✅ Benefits Table -->
+        <!-- <h6 class="bg-secondary text-white px-3 py-2 rounded-top mt-4">
+          Benefits
+        </h6> -->
+        <table
+          class="table table-bordered text-center align-middle table-striped"
+        >
+          <thead class="table-dark text-white">
+            <tr>
+              <th class="text-start">Benefit</th>
+              <th *ngFor="let tier of membershipTiers">{{ tier.name }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let benefit of allBenefits">
+              <td class="text-start fw-medium">{{ benefit }}</td>
+              <td *ngFor="let tier of membershipTiers">
+                {{ hasBenefit(tier, benefit) ? "Yes" : "—" }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="modal-footer bg-white border-0 px-4 py-3">
+        <button
+          class="btn btn-outline-dark rounded-pill px-4"
+          data-bs-dismiss="modal"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,73 @@
+<header
+  class="hero-section"
+  [ngStyle]="{ 'background-image': 'url(' + backgroundImageUrl + ')' }"
+>
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h2 class="about-us-heading">
+      <span class="line"></span>
+      DINING
+      <span class="line"></span>
+    </h2>
+  </div>
+</header>
+
+<section class="animated-section" [class.animate]="animateSignatureHeading">
+  <section class="explore-section text-center py-5">
+    <h2 class="section-title">EXPLORE NOW</h2>
+    <p class="section-description px-4">
+      Indulge your senses with a culinary journey at our exquisite dining
+      venues. From gourmet international cuisine to local delicacies, our chefs
+      craft every dish with passion and precision.
+    </p>
+  </section>
+
+  <section
+    class="signature-heading-section"
+    [class.animate]="animateSignatureHeading"
+  >
+    <h2 class="signature-heading">
+      <span class="line"></span>
+      OUR SIGNATURE DISHES
+      <span class="line"></span>
+    </h2>
+  </section>
+
+  <div
+    class="carousel-wrapper"
+    (mouseenter)="stopAutoScroll()"
+    (mouseleave)="startAutoScroll()"
+  >
+    <button class="nav left" (click)="scrollLeft()">
+      <span>&#10094;</span>
+    </button>
+
+    <div class="carousel-container" #scrollContainer>
+      <div
+        class="hotel-card"
+        *ngFor="let hotel of hotels; let i = index"
+        (mouseenter)="onCardHover(i)"
+        (mouseleave)="onCardLeave(i)"
+      >
+        <div class="image-wrapper">
+          <img
+            class="hotel-image current"
+            [src]="hotel.images[currentImageIndexes[i]]"
+            alt="{{ hotel.title }}"
+          />
+        </div>
+        <div class="hotel-content">
+          <h3>
+            <span class="line"></span>
+            {{ hotel.title.toUpperCase() }}
+          </h3>
+          <p>{{ hotel.description }}</p>
+        </div>
+      </div>
+    </div>
+
+    <button class="nav right" (click)="scrollRight()">
+      <span>&#10095;</span>
+    </button>
+  </div>
+</section>

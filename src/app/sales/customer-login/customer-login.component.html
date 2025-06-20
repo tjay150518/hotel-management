@@ -1,0 +1,123 @@
+<section class="main">
+    <div class="login">
+        <h2 class="login-header">
+            <img
+                src="../../../assets/user_png.png"
+                alt="User Icon"
+                class="login-icon"
+            >
+            Login
+        </h2>
+        <div class="login-form">
+            <form
+                [formGroup]="form"
+                autocomplete="off"
+            >
+                <div class="form-group">
+                    <label
+                        for="username"
+                        class="form-label"
+                    >
+                        Username/பயனர் பெயர்
+                    </label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="username"
+                        formControlName="username"
+                        required
+                        maxlength="40"
+                        (keypress)="inputValidate($event,'alphaNumericWithUnderscore')"
+                    >
+                    <div
+                        *ngIf="form.get('username')?.touched && form.get('username')?.hasError('required')"
+                        class="error-message"
+                    >
+                        Username is required
+                    </div>
+                    <div
+                        *ngIf="form.get('username')?.touched && form.get('username')?.hasError('pattern')"
+                        class="error-message"
+                    >
+                        Username must contain alphanumeric characters, underscores, dots, or dashes (3-40 characters)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label
+                        for="password"
+                        class="form-label"
+                    >
+                        Password/கடவுச்சொல்
+                    </label>
+                    <input
+                        type="password"
+                        class="form-control"
+                        id="password"
+                        formControlName="password"
+                        required
+                        maxlength="16"
+                    >
+                    <div
+                        *ngIf="form.get('password')?.touched && form.get('password')?.hasError('required')"
+                        class="error-message"
+                    >
+                        Password is required
+                    </div>
+                    <div
+                        *ngIf="form.get('password')?.touched && form.get('password')?.hasError('minLength')"
+                        class="error-message"
+                    >
+                        Password must be at least 8 characters long
+                    </div>
+                    <div
+                        *ngIf="form.get('password')?.touched && form.get('password')?.hasError('pattern')"
+                        class="error-message"
+                    >
+                        Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special
+            character
+                    </div>
+                </div>
+                <div class="captcha-container">
+                    <div class="captcha">
+                        <span class="captcha-text">{{ captcha }}</span>
+                    </div>
+                    <button
+                        type="button"
+                        class="refresh-icon"
+                        (click)="generateCaptcha()"
+                    >
+                        <i class="fa-solid fa-rotate"></i>
+                    </button>
+                </div>
+                <div class="form-group">
+                    <input
+                        type="text"
+                        class="form-control"
+                        formControlName="captchaInput"
+                        placeholder="Enter CAPTCHA Code"
+                        maxlength="6"
+                        (keypress)="inputValidate($event, 'alphaNumeric')"
+                        (paste)="preventPaste($event)"
+                        (drop)="preventDrop($event)"
+                    >
+                    <!-- <input type="text" class="form-control" formControlName="captchaInput" placeholder="Enter CAPTCHA Code"
+            maxlength="6" (keypress)="inputValidate($event, 'alphaNumeric')" (paste)="preventPaste($event)"> -->
+                    <!-- <input type="text" class="form-control" formControlName="captchaInput" placeholder="Enter CAPTCHA Code"
+            maxlength="6" (keypress)="inputValidate($event,'alphaNumeric')"> -->
+                </div>
+
+
+                <div class="button-container">
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                        [disabled]="loginDisable"
+                        (click)="login()"
+                    >
+                        Login
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

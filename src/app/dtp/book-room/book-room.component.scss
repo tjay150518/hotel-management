@@ -1,0 +1,170 @@
+.premium-heading {
+  font-size: 32px;
+  font-weight: 700;
+  position: relative;
+  text-transform: uppercase;
+  color: #2c3e50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  animation: fadeIn 0.8s ease-in-out both;
+
+  .decor-line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(to right, #c9a74e, #ffd700);
+  }
+}
+
+.premium-card {
+  position: relative;
+  border-radius: 16px;
+  background: #fff;
+  overflow: hidden;
+  margin-bottom: 30px;
+  padding: 0;
+  animation: slideUp 0.7s ease-in-out both;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  // Glowing outer border effect
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    left: -2px;
+    right: -2px;
+    z-index: -1;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #c9a74e, #ffd700, #b49549);
+    background-size: 400% 400%;
+    animation: goldGlow 5s ease infinite;
+  }
+
+  // Inner white card with shadow
+  .row {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
+  }
+}
+
+
+// Button Styling
+.btn-gold {
+  background-color: #b49549;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+
+  &:hover {
+    background-color: #967c35;
+    transform: scale(1.05);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(180, 149, 73, 0.5);
+  }
+}
+
+.text-gold {
+  color: #b49549;
+}
+
+// Feature List
+.room-features li {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+// Optional: Offer Highlight Block
+.offer-highlight {
+  font-size: 14px;
+  color: #e67e22;
+  font-weight: 600;
+  background: #fff8e1;
+  padding: 6px 12px;
+  border-left: 4px solid #f39c12;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+// Card Entrance Staggering (optional)
+.premium-card:nth-child(1) { animation-delay: 0.1s; }
+.premium-card:nth-child(2) { animation-delay: 0.2s; }
+.premium-card:nth-child(3) { animation-delay: 0.3s; }
+
+// Animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Responsive Fixes
+@media (max-width: 768px) {
+  .premium-heading {
+    flex-direction: column;
+    font-size: 24px;
+    gap: 10px;
+  }
+
+  .premium-card .row {
+    flex-direction: column;
+  }
+
+  .premium-card img {
+    height: auto !important;
+    border-radius: 0;
+  }
+
+  .btn-gold {
+    width: 100%;
+  }
+}
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(44, 62, 80, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+}

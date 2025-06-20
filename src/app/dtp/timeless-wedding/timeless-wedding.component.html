@@ -1,0 +1,70 @@
+<header
+  class="hero-section"
+  [ngStyle]="{ 'background-image': 'url(' + backgroundImageUrl + ')' }"
+>
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h2 class="about-us-heading">
+      <span class="line"></span>
+      TIMELESS WEDDING
+      <span class="line"></span>
+    </h2>
+  </div>
+</header>
+
+<section
+  class="about-green-tree"
+  id="animated-section"
+  [class.animate]="animateSignatureHeading"
+>
+  <div class="container">
+    <h3 class="green-tree-title">Make Your Wedding Dream Come True</h3>
+    <p class="green-tree-description">
+      Step into a world of timeless romance and elegance where your wedding
+      dreams come to life. Whether it’s an intimate gathering or a grand
+      celebration, our venue blends luxurious settings with personalized service
+      to craft unforgettable moments. Say "I do" surrounded by beauty, joy, and
+      golden memories that last forever.
+    </p>
+  </div>
+</section>
+
+<div class="wedding-section container">
+  <!-- Tab Scroll Menu -->
+  <div class="scroll-menu d-flex align-items-center">
+    <button class="arrow-btn" (click)="scrollLeft()">&#8249;</button>
+
+    <div class="menu-items-wrapper" #menu>
+      <div
+        class="menu-item"
+        *ngFor="let item of weddingTabs; let i = index"
+        [class.active]="i === selectedIndex"
+        (click)="selectTab(i)"
+      >
+        {{ item.title }}
+      </div>
+    </div>
+
+    <button class="arrow-btn" (click)="scrollRight()">&#8250;</button>
+  </div>
+
+  <!-- Tab Content -->
+  <div
+    class="tab-content d-flex align-items-center justify-content-between mt-5 flex-wrap"
+  >
+    <div class="tab-image col-lg-6 col-12 mb-4 mb-lg-0 pe-lg-5">
+      <img [src]="weddingTabs[selectedIndex].image" class="img-fluid rounded" />
+    </div>
+    <div class="tab-text col-lg-6 col-12">
+      <div class="heading-line">
+        <span class="line"></span>
+        <h2 class="tab-heading">{{ weddingTabs[selectedIndex].title }}</h2>
+        <span class="line"></span>
+      </div>
+      <p class="tab-subtitle">Celebrate love and elegance in every detail.</p>
+      <p class="tab-description">
+        {{ weddingTabs[selectedIndex].description }}
+      </p>
+    </div>
+  </div>
+</div>

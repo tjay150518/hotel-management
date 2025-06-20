@@ -1,0 +1,360 @@
+.hero-section {
+  position: relative;
+  height: 70vh;
+  background-color: #a98037;
+  background-image: url('../../../assets/IMG_0967.JPG');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  animation: zoomFade 1.5s ease-out forwards;
+}
+
+@keyframes zoomFade {
+  0% {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: inherit;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(20px);
+  z-index: 0;
+  opacity: 0.4;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  animation: fadeIn 1.5s ease-out 0.5s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-us-heading {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: #fff;
+  position: relative;
+  opacity: 0;
+  animation: fadeSlide 1.2s ease-out 0.8s forwards;
+}
+
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-us-heading .line {
+  flex-grow: 1;
+  height: 2px;
+  background: linear-gradient(to right, #fff, #d4af37, #fff);
+  max-width: 100px;
+  opacity: 0.8;
+}
+
+.about-us-heading .line {
+  flex-grow: 1;
+  height: 3px;
+  background: #a98037; /* goldish color */
+  border-radius: 3px;
+}
+.section-description {
+  font-family: 'Open Sans', sans-serif;
+  max-width: 700px;
+  margin: auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  animation: fadeIn 2s ease forwards;
+  opacity: 0;
+}
+
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 10px;
+  position: relative;
+  background: #fff;
+  overflow-x: hidden;
+}
+
+.carousel-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 24px;
+  padding: 10px;
+  max-width: 90vw;
+
+  scrollbar-width: none; 
+  -ms-overflow-style: none;  
+}
+
+.carousel-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.hotel-card {
+  scroll-snap-align: center;
+  flex: 0 0 300px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  overflow: hidden;
+  position: relative;
+  animation: slideUp 0.7s ease-in-out;
+}
+
+.hotel-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.image-wrapper {
+  width: 100%;
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hotel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.5s ease;
+  transform: scale(1.05);
+  border-bottom: 1px solid #eee;
+}
+
+.hotel-card:hover .hotel-image {
+  transform: scale(1.15);
+}
+
+.image-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.4));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.hotel-card:hover .image-wrapper::after {
+  opacity: 1;
+}
+
+.hotel-card::before {
+  content: "FEATURED";
+  position: absolute;
+  top: 12px;
+  left: -40px;
+  transform: rotate(-45deg);
+  background: #d4af37;
+  color: #fff;
+  padding: 4px 40px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Hotel content */
+.hotel-content {
+  padding: 20px;
+  text-align: center;
+  background: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+.hotel-content h3 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.hotel-content h3 .line {
+  display: inline-block;
+  width: 40px;
+  height: 2px;
+  background: #d4af37;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.hotel-content p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  animation: fadeInText 1s ease-in;
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.nav {
+  border: 1px solid #a98037;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.6rem;
+  background: #fff;
+  color: #a98037;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+}
+
+.nav:hover {
+  background-color: #f9f9f9;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.nav.left {
+  left: 10px;
+}
+
+.nav.right {
+  right: 10px;
+}
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-dropdown .dropdown-item-animate {
+  opacity: 0;
+  animation: fadeInSlide 0.5s ease forwards;
+}
+
+.animate-dropdown .delay-1 {
+  animation-delay: 0.15s;
+}
+.animate-dropdown .delay-2 {
+  animation-delay: 0.3s;
+}
+
+.more-dropdown.show .dropdown-menu .dropdown-item-animate {
+  display: block;
+}
+.signature-heading-section {
+  opacity: 0;
+  transform: translateY(-40px); /* Hidden off-screen */
+  transition: all 1s ease-in-out;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.signature-heading-section.animate {
+  opacity: 1;
+  transform: translateY(0); /* Becomes visible */
+}
+
+.signature-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* space between text and lines */
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.signature-heading .line {
+  flex-grow: 1;
+  height: 3px;
+  background: #a98037;
+  border-radius: 2px;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: center left;
+  transition: transform 1s ease, opacity 1s ease;
+}
+
+/* Animate lines when container is visible */
+.signature-heading-section.animate .line {
+  opacity: 1;
+  transform: scaleX(1);
+}

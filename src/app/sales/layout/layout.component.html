@@ -1,0 +1,12 @@
+<!-- Loader: Make sure this is before router-outlet -->
+<div class="custom-loader" *ngIf="isLoading">
+  <img src="../../../assets/GT_Logo Final-05.png" alt="Loading..." />
+</div>
+
+<app-nav-bar></app-nav-bar>
+
+<div class="page-content" style="padding-top: 100px">
+  <router-outlet></router-outlet>
+</div>
+
+<app-footer></app-footer>

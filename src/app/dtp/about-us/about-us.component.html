@@ -1,0 +1,50 @@
+<header
+  class="hero-section"
+  [ngStyle]="{ 'background-image': 'url(' + backgroundImageUrl + ')' }"
+>
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h2 class="about-us-heading">
+      <span class="line"></span>
+      ABOUT US
+      <span class="line"></span>
+    </h2>
+  </div>
+</header>
+
+<section
+  class="about-green-tree"
+  id="animated-section"
+  [class.animate]="animateSignatureHeading"
+>
+  <div class="container">
+    <h3 class="green-tree-title">A Touch of Golden Magic</h3>
+    <p class="green-tree-description">
+      Experience the magic of Golden Tree Restaurant — a place where nature’s
+      brilliance meets gourmet excellence. Here, every meal is a celebration of
+      fresh, vibrant flavors served in a captivating atmosphere that glows with
+      golden charm and cozy comfort.
+    </p>
+  </div>
+</section>
+
+<div class="hotel-grid row">
+  <div
+    class="col-md-3 hotel-card"
+    *ngFor="let section of sections; let i = index"
+    [ngStyle]="{
+      'background-image': 'url(' + activeImage + ')',
+      'background-position': getBgPosition(i)
+    }"
+    (mouseenter)="setActive(section)"
+    [class.active]="activeSection?.title === section.title"
+    [class.dimmed]="activeSection?.title !== section.title"
+  >
+    <div class="overlay-content" *ngIf="activeSection?.title === section.title">
+      <h4>{{ section.title }}</h4>
+      <ul>
+        <li *ngFor="let topic of section.topics">{{ topic }}</li>
+      </ul>
+    </div>
+  </div>
+</div>

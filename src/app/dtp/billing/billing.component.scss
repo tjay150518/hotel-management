@@ -1,0 +1,44 @@
+.billing-page {
+  background: #f7f9fb;
+
+  .section-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #2c3e50;
+    border-bottom: 2px solid #b49549;
+    padding-bottom: 6px;
+    margin-bottom: 16px;
+  }
+
+  .billing-card {
+    border-radius: 14px;
+    background: #fff;
+  }
+
+  .billing-side {
+    background: #fffdf7;
+    border-left: 4px solid #b49549;
+    border-radius: 12px;
+  }
+
+  .btn-gold {
+    background-color: #b49549;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+
+    &:hover {
+      background-color: #967c35;
+    }
+  }
+
+  .form-control {
+    background: #fdfdfd;
+    border-radius: 6px;
+  }
+
+  .text-gold {
+    color: #b49549;
+  }
+}

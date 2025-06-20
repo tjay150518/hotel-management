@@ -1,0 +1,85 @@
+.room-card {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.room-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.12);
+}
+
+@media (min-width: 768px) {
+  .room-card {
+    flex-direction: row;
+    min-height: 300px;
+  }
+
+  .room-image {
+    flex: 0 0 40%;
+    max-width: 40%;
+  }
+
+  .room-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0; /* Keep sharp inside card */
+  }
+}
+
+.room-image img {
+  width: 100%;
+  display: block;
+}
+
+.room-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  background: #fdfdfd;
+}
+
+.room-details h4 {
+  font-weight: 600;
+  color: #333;
+}
+
+.room-details p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.feature-list {
+  padding-left: 18px;
+  margin: 10px 0 0 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.feature-list li {
+  margin-bottom: 4px;
+}
+
+.btn-gold {
+  background-color: #b49549;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.btn-gold:hover {
+  background-color: #967c35;
+  color: #fff;
+}

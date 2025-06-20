@@ -1,0 +1,218 @@
+.hero-section {
+  position: relative;
+  height: 70vh;
+  background-color: #a98037;
+  background-image: url('../../../assets/IMG_0967.JPG');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  animation: zoomFade 1.5s ease-out forwards;
+}
+
+@keyframes zoomFade {
+  0% {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: inherit;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(20px);
+  z-index: 0;
+  opacity: 0.4;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  animation: fadeIn 1.5s ease-out 0.5s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-us-heading {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: #fff;
+  position: relative;
+  opacity: 0;
+  animation: fadeSlide 1.2s ease-out 0.8s forwards;
+}
+
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-us-heading .line {
+  flex-grow: 1;
+  height: 2px;
+  background: linear-gradient(to right, #fff, #d4af37, #fff);
+  max-width: 100px;
+  opacity: 0.8;
+}
+
+.about-us-heading .line {
+  flex-grow: 1;
+  height: 3px;
+  background: #a98037; /* goldish color */
+  border-radius: 3px;
+}
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #313030;
+  padding: 2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-wrapper {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.7s ease-in-out;
+  position: relative;
+}
+
+.carousel-card {
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
+  margin: 0 0.5rem;
+  background: rgba(34, 34, 34, 0.5); /* semi-transparent dark */
+  color: #fff;
+  text-align: center;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0.3;
+  transform: scale(0.85);
+  z-index: 1;
+  padding: 1rem;
+  border-radius: 12px;
+  backdrop-filter: blur(6px); /* Optional: gives a frosted glass effect */
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Optional subtle border */
+}
+
+.carousel-card.active-card {
+  transform: scale(1);
+  opacity: 1;
+  background: rgba(51, 51, 51, 0.7); /* darker for active card */
+  z-index: 2;
+}
+.carousel-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.more-link {
+  color: #d4a017;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.side-text {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.carousel-card.active-card {
+  transform: scale(1);
+  opacity: 1;
+  background: #333;
+  z-index: 2;
+}
+
+.nav-btn {
+  background: none;
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 10;
+}
+.about-green-tree.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-green-tree {
+  max-width: 900px;
+  margin: 40px auto 80px auto;
+  padding: 0 20px;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.green-tree-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+  color: #a98037; /* a fresh green */
+}
+
+.green-tree-description {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  max-width: 650px;
+  margin: 0 auto 40px;
+  color: #444;
+}

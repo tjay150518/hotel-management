@@ -1,0 +1,121 @@
+/* Overall Footer Container */
+.custom-footer {
+  background-color: #1a120b; /* Deep coffee tone */
+  color: #e4d7c6; /* Light beige */
+  font-family: 'Segoe UI', sans-serif;
+  padding-top: 3rem;
+}
+
+.footer-logo-img {
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 1rem;
+  animation-delay: 0.3s;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.text-gold {
+  color: #d4aa52 !important;
+  font-weight: bold;
+}
+
+/* Footer Navigation Links */
+.footer-nav {
+  padding: 0;
+  list-style: none;
+}
+
+.footer-nav li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-nav a {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: #d4aa52;
+  text-decoration: underline;
+}
+
+/* Social Icons Styling */
+.social-icons a {
+  display: inline-block;
+  background-color: #2a1d14;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  margin: 0 5px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color: #d4aa52;
+  color: #1a120b;
+  transform: scale(1.1);
+  text-decoration: none;
+}
+
+/* Contact Info Links */
+a[href^="mailto:"],
+a[href^="http"] {
+  color: #d4aa52;
+  text-decoration: none;
+}
+
+a[href^="mailto:"]:hover,
+a[href^="http"]:hover {
+  text-decoration: underline;
+}
+
+marquee {
+  color: #d4aa52;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding-top: 1rem;
+  white-space: nowrap;
+}
+
+/* Bottom Footer */
+.footer-bottom {
+  padding-top: 1rem;
+  font-size: 0.85rem;
+  color: #b7b1a3;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .footer-logo {
+    font-size: 1.8rem;
+  }
+
+  .social-icons a {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    margin: 0 4px;
+  }
+
+  .footer-nav li {
+    margin-bottom: 0.3rem;
+  }
+
+  marquee {
+    font-size: 0.8rem;
+  }
+}

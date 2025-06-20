@@ -1,0 +1,200 @@
+#epicureCarousel {
+  height: 80vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide-img {
+  height: 100vh;
+  object-fit: cover;
+}
+
+/* Fixed Overlay */
+.fixed-overlay {
+  position: absolute;
+  bottom: 60px;
+  left: 60px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px 30px;
+  border-radius: 8px;
+}
+
+.epicure-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff;
+  margin: 0;
+}
+
+.epicure-desc {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-top: 10px;
+}
+.epicure-hero {
+  height: 80vh;
+  background: url('../../../assets/1.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+
+  .hero-content {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    border-radius: 10px;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1.3rem;
+  }
+}
+
+.epicure-experiences {
+  background: #f8f4ef;
+  padding: 60px 40px;
+
+  .section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+
+    img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: -100%;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      transition: bottom 0.3s;
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.05);
+      }
+      .overlay {
+        bottom: 0;
+      }
+    }
+  }
+}
+
+.epicure-testimonials {
+  padding: 60px 30px;
+  background: #fff;
+
+  .section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .testimonial-slider {
+    max-width: 800px;
+    margin: auto;
+  }
+
+  .testimonial {
+    background: #f0ece6;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    text-align: center;
+
+    p {
+      font-style: italic;
+    }
+
+    h5 {
+      margin-top: 15px;
+      font-weight: 600;
+    }
+  }
+}
+
+.epicure-flip-services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 60px;
+  background: #fefcf9;
+}
+
+.flip-card {
+  background: transparent;
+  width: 200px;
+  height: 200px;
+  perspective: 1000px;
+
+  .flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+  }
+
+  &:hover .flip-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-front,
+  .flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .flip-front {
+    background: #fff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .flip-back {
+    background: #bca89b;
+    color: white;
+    transform: rotateY(180deg);
+  }
+}
+

@@ -1,0 +1,66 @@
+<header class="hero-section">
+  <video #bgVideo autoplay muted loop playsinline class="bg-video">
+    <source src="../../../assets/Walkthrough Edit_V7.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="overlay"></div>
+</header>
+
+<section
+  class="explore-section text-center py-5"
+  [class.animate]="inView"
+  #exploreSection
+>
+  <div class="container">
+    <h2 class="explore-title">EXPLORE NOW</h2>
+    <div class="explore-divider"></div>
+    <p class="section-description px-4">
+      From a luxury urban sanctum to the halls of royalty,<br />
+      an idyllic resort to a jungle retreat—<br />
+      discover timeless experiences woven in elegance and serenity.
+    </p>
+  </div>
+</section>
+
+<!-- <div class="carousel-wrapper">
+  <button class="nav left" (click)="scrollLeft()">&#10094;</button>
+
+  <div class="carousel-container" #scrollContainer>
+    <div class="hotel-card" *ngFor="let hotel of hotels">
+      <img [src]="hotel.image" alt="{{ hotel.title }}" class="hotel-image" />
+      <div class="hotel-content">
+        <h3>{{ hotel.title }}</h3>
+        <p>{{ hotel.description }}</p>
+      </div>
+    </div>
+  </div>
+
+  <button class="nav right" (click)="scrollRight()">&#10095;</button>
+</div> -->
+<div
+  class="carousel-wrapper"
+  [ngStyle]="{
+    'background-image': 'url(' + cards[activeIndex].background + ')'
+  }"
+>
+  <div class="overlay">
+    <button class="nav left" (click)="scrollLeft()">‹</button>
+
+    <div class="carousel" #carousel>
+      <div
+        class="card"
+        *ngFor="let card of cards; let i = index"
+        [class.active]="i === activeIndex"
+      >
+        <img [src]="card.image" />
+        <div class="description">
+          <h2 class="title">{{ card.title }}</h2>
+          <p>{{ card.description }}</p>
+        </div>
+      </div>
+    </div>
+
+    <button class="nav right" (click)="scrollRight()">›</button>
+  </div>
+</div>

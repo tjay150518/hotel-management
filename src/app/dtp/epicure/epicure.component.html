@@ -1,0 +1,62 @@
+<div
+  id="epicureCarousel"
+  class="carousel slide carousel-fade"
+  data-bs-ride="carousel"
+  data-bs-interval="3000"
+  (slid.bs.carousel)="onSlideChange()"
+>
+  <!-- Fixed Title + Dynamic Subtitle -->
+  <div class="fixed-overlay">
+    <h2 class="epicure-title">EPICURE</h2>
+    <p class="epicure-desc">{{ currentCaption }}</p>
+  </div>
+
+  <div class="carousel-inner">
+    <div
+      class="carousel-item"
+      *ngFor="let slide of slides; let i = index"
+      [class.active]="i === 0"
+      [attr.data-caption]="slide.caption"
+    >
+      <img
+        [src]="slide.image"
+        class="d-block w-100 slide-img"
+        [alt]="'Slide ' + (i + 1)"
+      />
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#epicureCarousel"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#epicureCarousel"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+<section class="epicure-testimonials">
+  <h2 class="section-title">What Guests Say</h2>
+  <div class="testimonial-slider">
+    <div class="testimonial" *ngFor="let t of testimonials">
+      <p>"{{ t.quote }}"</p>
+      <h5>– {{ t.name }}</h5>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="epicure-services">
+  <div class="service-box">🏨 Private Villas</div>
+  <div class="service-box">🍽️ Chef on Call</div>
+  <div class="service-box">🧖 Spa & Wellness</div>
+  <div class="service-box">🌅 Sunset Views</div>
+</section> -->

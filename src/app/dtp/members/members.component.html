@@ -1,0 +1,21 @@
+<div class="carousel-container">
+  <div
+    class="background-image"
+    [ngClass]="{
+      'flip-left': direction === 'left' && transitioning,
+      'flip-right': direction === 'right' && transitioning
+    }"
+    [style.backgroundImage]="'url(' + currentBackground + ')'"
+  ></div>
+
+  <div class="carousel-overlay">
+    <button class="nav-btn left" (click)="prev()">‹</button>
+
+    <div class="card">
+      <h2>{{ cards[activeIndex].title }}</h2>
+      <p>{{ cards[activeIndex].description }}</p>
+    </div>
+
+    <button class="nav-btn right" (click)="next()">›</button>
+  </div>
+</div>

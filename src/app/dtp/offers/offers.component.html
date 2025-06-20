@@ -1,0 +1,28 @@
+<header
+  class="hero-section"
+  [ngStyle]="{ 'background-image': 'url(' + backgroundImageUrl + ')' }"
+>
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h2 class="about-us-heading">
+      <span class="line"></span>
+      OFFERS
+      <span class="line"></span>
+    </h2>
+  </div>
+</header>
+<div class="offer-container">
+  <div
+    class="offer-card"
+    *ngFor="let offer of offers; let i = index"
+    [class.in-view]="isCardInView[i]"
+    #card
+  >
+    <img [src]="offer.image" class="parallax-img" alt="offer image" />
+    <div class="offer-content">
+      <h4>{{ offer.title }}</h4>
+      <p>{{ offer.description }}</p>
+      <p class="validity">Validity: {{ offer.validity }}</p>
+    </div>
+  </div>
+</div>

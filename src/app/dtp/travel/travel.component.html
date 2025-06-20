@@ -1,0 +1,59 @@
+<header
+  class="hero-section"
+  [ngStyle]="{ 'background-image': 'url(' + backgroundImageUrl + ')' }"
+>
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h2 class="about-us-heading">
+      <span class="line"></span>
+      TRAVEL AND STORIES
+      <span class="line"></span>
+    </h2>
+  </div>
+</header>
+
+<section
+  class="about-green-tree"
+  id="animated-section"
+  [class.animate]="animateSignatureHeading"
+>
+  <div class="container">
+    <h3 class="green-tree-title">Sunset Serenity by the Shore</h3>
+    <p class="green-tree-description">
+      As the sun begins to set, the sky transforms into shades of amber and
+      rose, casting a warm glow across the resort. Gentle waves create a calming
+      rhythm, blending perfectly with the serene atmosphere. Guests unwind on
+      cozy loungers, taking in the peaceful surroundings. In the evening, a
+      beach bonfire brings people together — stories are shared, laughter fills
+      the air, and the night feels timeless under the stars.
+    </p>
+  </div>
+</section>
+<div class="carousel-container">
+  <button class="nav-btn left" (click)="prev()">&#8249;</button>
+
+  <div class="carousel-wrapper">
+    <div
+      class="carousel-card"
+      *ngFor="let card of cards; let i = index"
+      [ngClass]="{
+        'prev-card': i === getPrevIndex(),
+        'active-card': i === currentIndex,
+        'next-card': i === getNextIndex()
+      }"
+    >
+      <ng-container *ngIf="i === currentIndex; else sideCard">
+        <img [src]="card.image" alt="Card Image" />
+        <div class="card-content">
+          <h3>{{ card.title }}</h3>
+          <p>{{ card.description }}</p>
+        </div>
+      </ng-container>
+      <ng-template #sideCard>
+        <div class="side-text">{{ card.title }}</div>
+      </ng-template>
+    </div>
+  </div>
+
+  <button class="nav-btn right" (click)="next()">&#8250;</button>
+</div>

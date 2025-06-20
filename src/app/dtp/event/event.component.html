@@ -1,0 +1,45 @@
+<header
+  class="hero-section"
+  [ngStyle]="{ 'background-image': 'url(' + backgroundImageUrl + ')' }"
+>
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h2 class="about-us-heading">
+      <span class="line"></span>
+      EVENT
+      <span class="line"></span>
+    </h2>
+  </div>
+</header>
+
+<section
+  class="about-green-tree"
+  id="animated-section"
+  [class.animate]="animateSignatureHeading"
+>
+  <div class="container">
+    <h3 class="green-tree-title">PLAN YOUR EVENT WITH US</h3>
+    <p class="green-tree-description">
+      Whether you're hosting a milestone birthday, an engagement party, or a
+      gala dinner, our event spaces provide the perfect canvas for your vision.
+      With enchanting décor, curated menus, and a dedicated team by your side,
+      your event will radiate warmth, style, and grace from start to finish.
+    </p>
+  </div>
+</section>
+<div class="commitment-carousel">
+  <button class="arrow left" (click)="scrollLeft(cardWrapper)">&#10094;</button>
+
+  <div class="card-wrapper" #cardWrapper>
+    <div class="commitment-card" *ngFor="let item of cards">
+      <img [src]="item.img" alt="{{ item.title }}" />
+      <div class="card-body">
+        <p class="card-title">{{ item.title }}</p>
+      </div>
+    </div>
+  </div>
+
+  <button class="arrow right" (click)="scrollRight(cardWrapper)">
+    &#10095;
+  </button>
+</div>
