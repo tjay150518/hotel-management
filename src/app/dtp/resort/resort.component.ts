@@ -10,7 +10,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrl: './resort.component.scss',
 })
 export class ResortComponent {
-  private images: string[] = ['../../../assets/palace.jpg'];
+  private images: string[] = ['assets/palace.jpg'];
   backgroundImageUrl: string = this.images[0];
   contactForm: FormGroup;
 

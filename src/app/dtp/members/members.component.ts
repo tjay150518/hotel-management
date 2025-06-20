@@ -12,38 +12,38 @@ export class MembersComponent {
   activeIndex = 0;
   transitioning = false;
   direction: 'left' | 'right' = 'left';
-  currentBackground = '../../../assets/member1.jpg';
+  currentBackground = 'assets/member1.jpg';
 
   cards = [
     {
       title: 'PRIORITY RESERVATIONS',
       description:
         'Get early access to bookings, peak-time reservations, and exclusive event invites as a premium member.',
-      background: '../../../assets/member1.jpg',
+      background: 'assets/member1.jpg',
     },
     {
       title: 'LOUNGE ACCESS',
       description:
         'Enjoy up to 12 complimentary entries per year to The Chambers — our members-only luxury lounge.',
-      background: '../../../assets/member2.jpg',
+      background: 'assets/member2.jpg',
     },
     {
       title: 'WELLNESS PRIVILEGES',
       description:
         'Complimentary spa sessions and wellness packages curated exclusively for members.',
-      background: '../../../assets/member3.jpg',
+      background: 'assets/member3.jpg',
     },
     {
       title: 'GOURMET REWARDS',
       description:
         'Earn dining points and enjoy complimentary meals during special member appreciation events.',
-      background: '../../../assets/member4.jpg',
+      background: 'assets/member4.jpg',
     },
     {
       title: 'STAY UPGRADE BENEFITS',
       description:
         'Automatic room upgrades and flexible late check-outs for our valued loyalty members.',
-      background: '../../../assets/member5.jpg',
+      background: 'assets/member5.jpg',
     },
   ];
 

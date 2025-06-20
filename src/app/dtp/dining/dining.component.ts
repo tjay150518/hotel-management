@@ -18,7 +18,7 @@ export class DiningComponent {
   private currentIndex1 = 0;
   animateSignatureHeading = false;
 
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2) { }
 
   ngOnInit(): void {
     this.currentImageIndexes = new Array(this.hotels.length).fill(0);
@@ -30,9 +30,9 @@ export class DiningComponent {
     {
       title: 'Delicious Noodles Delight',
       images: [
-        '../../../assets/nod1.jpg',
-        '../../../assets/nod2.jpg',
-        '../../../assets/nod3.jpg',
+        'assets/nod1.jpg',
+        'assets/nod2.jpg',
+        'assets/nod3.jpg',
       ],
       description:
         'Freshly cooked noodles with vibrant veggies and authentic spices.',
@@ -40,9 +40,9 @@ export class DiningComponent {
     {
       title: 'Juicy Gourmet Steaks',
       images: [
-        '../../../assets/steak1.jpg',
-        '../../../assets/steak2.jpg',
-        '../../../assets/steak3.jpg',
+        'assets/steak1.jpg',
+        'assets/steak2.jpg',
+        'assets/steak3.jpg',
       ],
       description:
         'Savor the taste of perfectly cooked steaks with rich flavors.',
@@ -50,9 +50,9 @@ export class DiningComponent {
     {
       title: 'Creamy Ice Cream Treats',
       images: [
-        '../../../assets/ice1.jpg',
-        '../../../assets/ice2.jpg',
-        '../../../assets/ice3.jpg',
+        'assets/ice1.jpg',
+        'assets/ice2.jpg',
+        'assets/ice3.jpg',
       ],
       description:
         'Delightful creamy ice creams with a variety of flavors and toppings.',
@@ -60,9 +60,9 @@ export class DiningComponent {
     {
       title: 'Exquisite Seafood Platter',
       images: [
-        '../../../assets/sea1.jpg',
-        '../../../assets/sea2.jpeg',
-        '../../../assets/sea3.jpg',
+        'assets/sea1.jpg',
+        'assets/sea2.jpeg',
+        'assets/sea3.jpg',
       ],
       description:
         'Fresh seafood delicacies with vibrant flavors and elegant presentation.',
@@ -70,9 +70,9 @@ export class DiningComponent {
     {
       title: 'Decadent Chocolate Desserts',
       images: [
-        '../../../assets/choco1.jpg',
-        '../../../assets/choco2.jpg',
-        '../../../assets/choco3.jpg',
+        'assets/choco1.jpg',
+        'assets/choco2.jpg',
+        'assets/choco3.jpg',
       ],
       description:
         'Rich and smooth chocolate desserts to satisfy your sweet cravings.',

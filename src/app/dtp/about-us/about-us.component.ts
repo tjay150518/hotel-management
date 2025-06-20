@@ -11,17 +11,17 @@ import { SharedModule } from '../../shared/shared.module';
 export class AboutUsComponent {
   activeSection: any;
   animateSignatureHeading = false;
-  constructor(private ngZone: NgZone) {}
+  constructor(private ngZone: NgZone) { }
   activeImage: string = '';
 
-  images: string[] = ['../../../assets/IMG_0967.JPG'];
+  images: string[] = ['assets/IMG_0967.JPG'];
 
   backgroundImageUrl: string = this.images[0];
 
   sections = [
     {
       title: 'Royal Palace Experience',
-      bg: '../../../assets/IMG_0968.JPG',
+      bg: 'assets/IMG_0968.JPG',
       topics: [
         'Luxury Suites',
         'Grand Ballrooms',
@@ -33,7 +33,7 @@ export class AboutUsComponent {
     },
     {
       title: 'Modern Hotel Comforts',
-      bg: '../../../assets/IMG_0971.JPG',
+      bg: 'assets/IMG_0971.JPG',
       topics: [
         'Executive Rooms',
         'Skyline Views',
@@ -45,7 +45,7 @@ export class AboutUsComponent {
     },
     {
       title: 'Exquisite Dining Delights',
-      bg: '../../../assets/IMG_0974.JPG',
+      bg: 'assets/IMG_0974.JPG',
       topics: [
         'Multi-Cuisine Restaurant',
         'Private Dining',
@@ -57,7 +57,7 @@ export class AboutUsComponent {
     },
     {
       title: 'Nature Retreat & Safari',
-      bg: '../../../assets/IMG_0976.JPG',
+      bg: 'assets/IMG_0976.JPG',
       topics: [
         'Luxury Tents',
         'Wildlife Jeep Tours',

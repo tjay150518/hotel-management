@@ -11,31 +11,31 @@ import { SharedModule } from '../../shared/shared.module';
 export class EpicureComponent implements AfterViewInit {
   slides = [
     {
-      image: '../../../assets/epicure1.jpg',
+      image: 'assets/epicure1.jpg',
       caption: 'EXCLUSIVE STAY BENEFITS',
     },
     {
-      image: '../../../assets/epicure2.jpg',
+      image: 'assets/epicure2.jpg',
       caption: 'HERITAGE STAYS WITH REGAL CHARM',
     },
     {
-      image: '../../../assets/epicure3.jpg',
+      image: 'assets/epicure3.jpg',
       caption: 'WELLNESS & RELAXATION',
     },
     {
-      image: '../../../assets/epicure4.jpg',
+      image: 'assets/epicure4.jpg',
       caption: 'TENTED CAMPS & SAFARI LUXURY',
     },
     {
-      image: '../../../assets/epicure5.jpg',
+      image: 'assets/epicure5.jpg',
       caption: 'CHEF-CURATED EXPERIENCES',
     },
     {
-      image: '../../../assets/epicure6.jpg',
+      image: 'assets/epicure6.jpg',
       caption: 'PEACEFUL VIEWS & SUNSETS',
     },
     {
-      image: '../../../assets/epicure7.jpg',
+      image: 'assets/epicure7.jpg',
       caption: 'SERENITY AMONG THE CLOUDS',
     },
   ];

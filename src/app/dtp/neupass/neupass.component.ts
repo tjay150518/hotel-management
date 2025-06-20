@@ -9,7 +9,7 @@ import { SharedModule } from '../../shared/shared.module';
   styleUrl: './neupass.component.scss',
 })
 export class NeupassComponent {
-  backgroundImageUrl: string = '../../../assets/neupass.png';
+  backgroundImageUrl: string = 'assets/neupass.png';
 
   membershipTiers = [
     {

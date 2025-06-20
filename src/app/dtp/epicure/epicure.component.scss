@@ -32,9 +32,10 @@
   color: #fff;
   margin-top: 10px;
 }
+
 .epicure-hero {
   height: 80vh;
-  background: url('../../../assets/1.jpg') center/cover no-repeat;
+  background: url('assets/1.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -103,6 +104,7 @@
       img {
         transform: scale(1.05);
       }
+
       .overlay {
         bottom: 0;
       }
@@ -197,4 +199,3 @@
     transform: rotateY(180deg);
   }
 }
-

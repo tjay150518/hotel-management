@@ -24,7 +24,7 @@ export class HomePageComponent implements AfterViewInit {
   activeIndex = 1;
   backgroundLoaded = false;
 
-  constructor(private zone: NgZone, private cdr: ChangeDetectorRef) {}
+  constructor(private zone: NgZone, private cdr: ChangeDetectorRef) { }
 
   ngAfterViewInit() {
     const observer = new IntersectionObserver(
@@ -84,40 +84,40 @@ export class HomePageComponent implements AfterViewInit {
 
   cards = [
     {
-      image: '../../../assets/1.jpg',
-      background: '../../../assets/1.jpg',
+      image: 'assets/1.jpg',
+      background: 'assets/1.jpg',
       title: 'Luxury Suite Room',
       description:
         'Indulge in our spacious suite rooms featuring elegant interiors...',
     },
     {
-      image: '../../../assets/2.jpg',
-      background: '../../../assets/2.jpg',
+      image: 'assets/2.jpg',
+      background: 'assets/2.jpg',
       title: 'Infinity Pool & Leisure',
       description: 'Relax by our serene infinity pool...',
     },
     {
-      // image: '../../../assets/3.jpg',
-      image: '../../../assets/IMG_0971.JPG',
-      background: '../../../assets/IMG_0971.JPG',
+      // image: 'assets/3.jpg',
+      image: 'assets/IMG_0971.JPG',
+      background: 'assets/IMG_0971.JPG',
       title: 'Comfortable Standard Rooms',
       description: 'Enjoy comfort and convenience...',
     },
     {
-      image: '../../../assets/4.jpg',
-      background: '../../../assets/4.jpg',
+      image: 'assets/4.jpg',
+      background: 'assets/4.jpg',
       title: 'Gourmet Dining Experience',
       description: 'Savor a variety of culinary delights...',
     },
     {
-      image: '../../../assets/5.jpg',
-      background: '../../../assets/5.jpg',
+      image: 'assets/5.jpg',
+      background: 'assets/5.jpg',
       title: 'Our Hotel Property',
       description: 'Discover the elegance of our hotel property...',
     },
     {
-      image: '../../../assets/6.jpg',
-      background: '../../../assets/6.jpg',
+      image: 'assets/6.jpg',
+      background: 'assets/6.jpg',
       title: 'Fitness & Wellness Gym',
       description:
         'Stay active with our state-of-the-art fitness center equipped with modern gym facilities...',

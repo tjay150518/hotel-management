@@ -10,11 +10,11 @@ import { Title } from '@angular/platform-browser';
   styleUrl: './event.component.scss',
 })
 export class EventComponent {
-  images: string[] = ['../../../assets/meeting.jpg'];
+  images: string[] = ['assets/meeting.jpg'];
   animateSignatureHeading = false;
 
   backgroundImageUrl: string = this.images[0];
-  constructor(private ngZone: NgZone, private titleService: Title) {}
+  constructor(private ngZone: NgZone, private titleService: Title) { }
 
   ngAfterViewInit(): void {
     this.observeHeadingSection();
@@ -36,23 +36,23 @@ export class EventComponent {
   }
   cards = [
     {
-      img: '../../../assets/EVENT1.jpg',
+      img: 'assets/EVENT1.jpg',
       title: 'CULINARY EXCELLENCE',
     },
     {
-      img: '../../../assets/EVENT2.jpg',
+      img: 'assets/EVENT2.jpg',
       title: 'FLAVOURS OF LUXURY',
     },
     {
-      img: '../../../assets/EVENT3.jpg',
+      img: 'assets/EVENT3.jpg',
       title: 'NATURE MEETS ELEGANCE',
     },
     {
-      img: '../../../assets/EVENT4.jpg',
+      img: 'assets/EVENT4.jpg',
       title: 'ROYAL COMFORT',
     },
     {
-      img: '../../../assets/event6.jpg',
+      img: 'assets/event6.jpg',
       title: 'CELEBRATION UNDER THE STARS',
     },
   ];

@@ -18,6 +18,7 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/sales-property",
+            "baseHref": "/hotel-management/",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -36,7 +37,7 @@
               "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": [
-  "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ]
           },
           "configurations": {

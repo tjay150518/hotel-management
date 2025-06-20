@@ -9,11 +9,11 @@ import { SharedModule } from '../../shared/shared.module';
   styleUrl: './wellness.component.scss',
 })
 export class WellnessComponent {
-  images: string[] = ['../../../assets/spa.jpg'];
+  images: string[] = ['assets/spa.jpg'];
 
   backgroundImageUrl: string = this.images[0];
   animateSignatureHeading = false;
-  constructor(private ngZone: NgZone) {}
+  constructor(private ngZone: NgZone) { }
   ngAfterViewInit(): void {
     this.observeHeadingSection();
   }

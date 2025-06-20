@@ -17,7 +17,7 @@ import { NavigationEnd, Router } from '@angular/router';
 })
 export class NavBarComponent implements AfterViewInit {
   isScrolled = false;
-  brandLogoUrl = '../../../assets/GT_Logo Final-05.png';
+  brandLogoUrl = 'assets/GT_Logo Final-05.png';
   showPopup = false;
   adults = 1;
   children = 0;
@@ -56,8 +56,8 @@ export class NavBarComponent implements AfterViewInit {
 
   //   // Change logo if needed
   //   this.brandLogoUrl = this.isScrolled
-  //     ? '../../../assets/GT_Logo Final-06.png'
-  //     : '../../../assets/GT_Logo Final-05.png';
+  //     ? 'assets/GT_Logo Final-06.png'
+  //     : 'assets/GT_Logo Final-05.png';
   // }
   checkScroll() {
     const offset =
@@ -69,7 +69,7 @@ export class NavBarComponent implements AfterViewInit {
     // this.isScrolled = offset > 50;
 
     // Always use the animated logo
-    this.brandLogoUrl = '../../../assets/GT_Logo Final-06.png';
+    this.brandLogoUrl = 'assets/GT_Logo Final-06.png';
   }
 
   openPopup() {

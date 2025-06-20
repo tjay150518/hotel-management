@@ -28,7 +28,7 @@ export class BookRoomComponent {
           'Located on higher floors for better views',
         ],
         offers: '⭐ Save 15% on stays longer than 2 nights',
-        image: '../../../assets/delux1.jpg',
+        image: 'assets/delux1.jpg',
       },
       {
         title: 'Deluxe - With Breakfast',
@@ -40,7 +40,7 @@ export class BookRoomComponent {
           'Priority early check-in on request',
         ],
         offers: '🍽️ Free breakfast + 10% off room service',
-        image: '../../../assets/delux2.jpg',
+        image: 'assets/delux2.jpg',
       },
       {
         title: 'Deluxe - With Breakfast + Pickup',
@@ -52,7 +52,7 @@ export class BookRoomComponent {
           'Faster room service & check-in',
         ],
         offers: '🚗 Free airport transfer + spa voucher worth ₹1,000',
-        image: '../../../assets/delux3.jpg',
+        image: 'assets/delux3.jpg',
       },
     ],
     suite: [
@@ -66,7 +66,7 @@ export class BookRoomComponent {
           'Spacious suite with living area',
         ],
         offers: '🍾 Welcome champagne + free spa session',
-        image: '../../../assets/suite1.jpg',
+        image: 'assets/suite1.jpg',
       },
       {
         title: 'Suite - With Dinner',
@@ -78,7 +78,7 @@ export class BookRoomComponent {
           'Exclusive club access during stay',
         ],
         offers: '🌅 Romantic dinner for 2 + late checkout until 4PM',
-        image: '../../../assets/suite2.jpg',
+        image: 'assets/suite2.jpg',
       },
       {
         title: 'Suite - Full Service',
@@ -90,7 +90,7 @@ export class BookRoomComponent {
           'Access to rooftop pool and lounge',
         ],
         offers: '🛎️ All meals + complimentary spa & chauffeur service',
-        image: '../../../assets/suite3.jpg',
+        image: 'assets/suite3.jpg',
       },
     ],
     executive: [
@@ -104,7 +104,7 @@ export class BookRoomComponent {
           'Quiet executive floor with workspace',
         ],
         offers: '💼 Free 1GB/day high-speed data + early check-in',
-        image: '../../../assets/exe1.jpg',
+        image: 'assets/exe1.jpg',
       },
       {
         title: 'Executive - With Breakfast',
@@ -116,7 +116,7 @@ export class BookRoomComponent {
           'Express check-in and checkout',
         ],
         offers: '🥐 Free breakfast + 10% off laundry services',
-        image: '../../../assets/exe2.jpg',
+        image: 'assets/exe2.jpg',
       },
       {
         title: 'Executive - Premium Plan',
@@ -128,7 +128,7 @@ export class BookRoomComponent {
           'Late checkout available on weekends',
         ],
         offers: '🍸 Free evening cocktails + late checkout until 3PM',
-        image: '../../../assets/exe3.jpg',
+        image: 'assets/exe3.jpg',
       },
     ],
   };
@@ -137,7 +137,7 @@ export class BookRoomComponent {
   children: any;
   rooms: any;
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.route.queryParams.subscribe((params) => {

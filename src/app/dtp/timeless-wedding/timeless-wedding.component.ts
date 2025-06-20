@@ -10,11 +10,11 @@ import { Title } from '@angular/platform-browser';
   styleUrl: './timeless-wedding.component.scss',
 })
 export class TimelessWeddingComponent {
-  images: string[] = ['../../../assets/wed.png'];
+  images: string[] = ['assets/wed.png'];
 
   backgroundImageUrl: string = this.images[0];
   animateSignatureHeading = false;
-  constructor(private ngZone: NgZone, private titleService: Title) {}
+  constructor(private ngZone: NgZone, private titleService: Title) { }
 
   ngAfterViewInit(): void {
     this.observeHeadingSection();
@@ -40,51 +40,51 @@ export class TimelessWeddingComponent {
   weddingTabs = [
     {
       title: 'HALDI',
-      image: '../../../assets/haldi1.jpg',
+      image: 'assets/haldi1.jpg',
       description:
         'Escape into paradise and celebrate your love with an unforgettable honeymoon experience.',
     },
     {
       title: 'SANGEET',
-      image: '../../../assets/sangeet1.jpg',
+      image: 'assets/sangeet1.jpg',
       description:
         'Reaffirm your love in a heartfelt ceremony surrounded by those who matter most.',
     },
     {
       title: 'COUPLE SHOOTS',
-      image: '../../../assets/photo.jpg',
+      image: 'assets/photo.jpg',
       description:
         'Immortalize your love with a romantic photoshoot, capturing the essence of your bond.',
     },
     {
       title: 'COCKTAIL',
-      image: '../../../assets/cocktail.jpg',
+      image: 'assets/cocktail.jpg',
       description:
         'Celebrate with elegance in a cocktail evening filled with glamour and cheer.',
     },
 
     {
       title: 'MEHNDI',
-      image: '../../../assets/mehandi1.jpg',
+      image: 'assets/mehandi1.jpg',
       description:
         'Celebrate tradition and beauty with intricate mehndi designs in a joyful pre-wedding ritual.',
     },
     {
       title: 'ENGAGEMENT',
-      image: '../../../assets/engagement1.jpg',
+      image: 'assets/engagement1.jpg',
       description:
         'Mark the beginning of your forever journey with a beautiful and intimate engagement ceremony.',
     },
 
     {
       title: 'WEDDING CEREMONY',
-      image: '../../../assets/wedding1.jpg',
+      image: 'assets/wedding1.jpg',
       description:
         'Tie the knot in a magical setting where traditions meet timeless elegance.',
     },
     {
       title: 'RECEPTION',
-      image: '../../../assets/reception1.jpg',
+      image: 'assets/reception1.jpg',
       description:
         'Celebrate your union with a luxurious reception, surrounded by love and laughter.',
     },

@@ -10,11 +10,11 @@ import { Router } from '@angular/router';
   styleUrl: './book-stay.component.scss',
 })
 export class BookStayComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   hotelRooms = [
     {
-      image: '../../../assets/room1.jpg',
+      image: 'assets/room1.jpg',
       name: 'Deluxe Room',
       description:
         'Spacious and elegant, the Deluxe Room offers plush bedding, Italian marble bathrooms, and panoramic city or sea views. Ideal for a restful stay with refined comfort.',
@@ -28,7 +28,7 @@ export class BookStayComponent {
       route: '/deluxe',
     },
     {
-      image: '../../../assets/room3.jpg',
+      image: 'assets/room3.jpg',
       name: 'Presidential Suite',
       description:
         'The epitome of luxury, the Presidential Suite boasts a private elevator, in-room spa, personal butler, and dedicated dining area with a grand piano for bespoke experiences.',
@@ -42,7 +42,7 @@ export class BookStayComponent {
       route: '/suite',
     },
     {
-      image: '../../../assets/room5.jpg',
+      image: 'assets/room5.jpg',
       name: 'Executive Room',
       description:
         'Tailored for business and short luxury stays, the Executive Room features modern workspace, club lounge access, and a fully stocked personal minibar.',
