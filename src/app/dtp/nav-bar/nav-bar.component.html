@@ -1,55 +1,98 @@
-<nav class="navbar navbar-expand-lg fixed-top py-3" [ngClass]="{
+<nav
+  class="navbar navbar-expand-lg fixed-top py-3"
+  [ngClass]="{
     'scrolled-navbar': isScrolled,
     'transparent-navbar': !isScrolled
-  }" id="mainNavbar">
+  }"
+  id="mainNavbar"
+>
   <div class="container-fluid px-2 position-relative">
     <!-- Toggler for mobile view -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <a class="navbar-brand position-absolute top-50 start-50" style="transform: translate(-10%, -55%)" href="#">
-      <img id="brandLogo" src="assets/GT_Logo Final-06.png" alt="Taj Logo" class="brand-logo" />
+    <a
+      class="navbar-brand position-absolute top-50 start-50"
+      style="transform: translate(-10%, -55%)"
+      href="#"
+    >
+      <img
+        id="brandLogo"
+        src="assets/GT_Logo Final-06.png"
+        alt="Taj Logo"
+        class="brand-logo"
+      />
     </a>
 
     <!-- Navigation Links -->
-    <div class="collapse navbar-collapse justify-content-between animate-nav" id="navbarNav">
+    <div
+      class="collapse navbar-collapse justify-content-between animate-nav"
+      id="navbarNav"
+    >
       <!-- Left Navigation -->
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/Hotel/Home-page">Home</a>
+          <a
+            class="nav-link"
+            routerLink="/Hotel/Home-page"
+            (click)="closeNavbar()"
+            >Home</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/Hotel/about-us">About Us</a>
+          <a
+            class="nav-link"
+            routerLink="/Hotel/about-us"
+            (click)="closeNavbar()"
+            >About Us</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/Hotel/Dining">Dining</a>
+          <a class="nav-link" routerLink="/Hotel/Dining" (click)="closeNavbar()"
+            >Dining</a
+          >
         </li>
 
         <!-- Memberships Mega Menu -->
-        <li class="nav-item dropdown position-relative">
-          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+        <li
+          class="nav-item dropdown position-relative"
+          (mouseenter)="isDesktop() && (showMembershipDropdown = true)"
+          (mouseleave)="isDesktop() && (showMembershipDropdown = false)"
+        >
+          <a
+            class="nav-link dropdown-toggle"
+            (click)="toggleMembershipDropdown($event)"
+          >
             Memberships <span class="arrow-icon">▼</span>
           </a>
 
-          <div class="dropdown-menu custom-mega-dropdown">
-            <div class="d-flex justify-content-around p-3" id="parent">
-              <div class="text-center">
-                <img src="assets/nav4.jpg" class="img-fluid mb-2 rounded" />
-                <p class="dropdown-item-text" style="cursor: pointer" routerLink="/Hotel/neupass">
-                  Neupass
-                </p>
-              </div>
-              <div class="text-center">
-                <img src="assets/IMG_0974.JPG" class="img-fluid mb-2 rounded" />
-                <p class="dropdown-item-text" style="cursor: pointer" routerLink="/Hotel/epicure">
-                  Epicure
-                </p>
-              </div>
-              <div class="text-center">
-                <img src="assets/IMG_0967.JPG" class="img-fluid mb-2 rounded" />
-                <p class="dropdown-item-text" routerLink="/Hotel/members" style="cursor: pointer">
-                  Business Connect
+          <div
+            class="dropdown-menu custom-mega-dropdown p-3"
+            [class.show]="showMembershipDropdown"
+          >
+            <div class="d-flex justify-content-around flex-wrap" id="parent">
+              <div
+                class="text-center mx-2 mb-3"
+                *ngFor="let item of membershipItems"
+              >
+                <img
+                  [src]="item.image"
+                  class="img-fluid mb-2 rounded"
+                  alt="{{ item.label }}"
+                />
+                <p
+                  class="dropdown-item-text"
+                  [routerLink]="item.link"
+                  style="cursor: pointer"
+                  (click)="closeNavbar()"
+                >
+                  {{ item.label }}
                 </p>
               </div>
             </div>
@@ -57,35 +100,48 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" routerLink="/Hotel/travel">Travel Stories</a>
+          <a class="nav-link" routerLink="/Hotel/travel" (click)="closeNavbar()"
+            >Travel Stories</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/Hotel/offer">Offers </a>
+          <a class="nav-link" routerLink="/Hotel/offer" (click)="closeNavbar()"
+            >Offers
+          </a>
         </li>
 
-        <!-- More Mega Menu -->
-        <li class="nav-item dropdown position-relative">
-          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-            More <span class="arrow-icon">▼</span>
+        <li
+          class="nav-item dropdown"
+          (mouseenter)="showDropdown = true"
+          (mouseleave)="showDropdown = false"
+        >
+          <a class="nav-link dropdown-toggle">
+            More <i class="arrow-icon fas fa-chevron-down"></i>
           </a>
 
-          <div class="dropdown-menu custom-mega-dropdown p-4">
-            <div class="d-flex justify-content-around align-items-start flex-wrap">
-              <div class="text-center mx-2 mb-3">
-                <img src="assets/more1.jpg" class="img-fluid mb-2 rounded" />
-                <a class="dropdown-item-text" routerLink="/Hotel/wellness">Wellness</a>
-              </div>
-              <div class="text-center mx-2 mb-3">
-                <img src="assets/more2.jpg" class="img-fluid mb-2 rounded" />
-                <a class="dropdown-item-text" routerLink="/Hotel/timeless-wedding">Timeless Wedding</a>
-              </div>
-              <div class="text-center mx-2 mb-3">
-                <img src="assets/more3.jpg" class="img-fluid mb-2 rounded" />
-                <a class="dropdown-item-text" routerLink="/Hotel/event">Event</a>
-              </div>
-              <div class="text-center mx-2 mb-3">
-                <img src="assets/IMG_0968.JPG" class="img-fluid mb-2 rounded" />
-                <a class="dropdown-item-text" routerLink="/Hotel/resort">Contact Us</a>
+          <div
+            class="dropdown-menu custom-mega-dropdown p-4"
+            [class.show]="showDropdown"
+          >
+            <div
+              class="d-flex justify-content-around align-items-start flex-wrap"
+            >
+              <div
+                class="text-center mx-2 mb-3"
+                *ngFor="let item of megaMenuItems"
+              >
+                <img
+                  [src]="item.image"
+                  class="img-fluid mb-2 rounded"
+                  alt="{{ item.label }}"
+                />
+                <a
+                  class="dropdown-item-text"
+                  [routerLink]="item.link"
+                  (click)="closeNavbar()"
+                >
+                  {{ item.label }}
+                </a>
               </div>
             </div>
           </div>
@@ -95,7 +151,11 @@
       <!-- Right Side -->
       <div class="d-flex align-items-center">
         <a class="nav-link me-3" href="#" style="color: #2b2b2b">Login</a>
-        <button class="btn book-now-btn glow-on-hover" (click)="openPopup()">
+        <button
+          class="btn book-now-btn glow-on-hover"
+          (click)="openPopup()"
+          (click)="closeNavbar()"
+        >
           Book a Stay
         </button>
       </div>
@@ -149,7 +209,9 @@
                 −
               </button>
               <span>{{ children }} Child</span>
-              <small class="text-muted d-block" style="font-size: 12px">(0 – 12 yrs)</small>
+              <small class="text-muted d-block" style="font-size: 12px"
+                >(0 – 12 yrs)</small
+              >
               <button (click)="increase('children')">+</button>
             </div>
 

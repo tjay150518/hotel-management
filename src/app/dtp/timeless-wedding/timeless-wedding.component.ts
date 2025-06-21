@@ -14,7 +14,7 @@ export class TimelessWeddingComponent {
 
   backgroundImageUrl: string = this.images[0];
   animateSignatureHeading = false;
-  constructor(private ngZone: NgZone, private titleService: Title) { }
+  constructor(private ngZone: NgZone, private titleService: Title) {}
 
   ngAfterViewInit(): void {
     this.observeHeadingSection();

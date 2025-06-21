@@ -144,13 +144,19 @@
 .carousel-wrapper {
   position: relative;
   height: 100vh;
+  background-color: #f9f9f9; 
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   transition: background-image 0.6s ease-in-out;
+  display: flex;
+  align-items: flex-start; 
+  padding-top: 80px; /* shift cards downward */
 }
 
+
 .carousel-wrapper .overlay {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   right: 0;
@@ -249,4 +255,121 @@
 
 .more-dropdown.show .dropdown-menu .dropdown-item-animate {
   display: block;
+}
+@media (max-width: 768px) {
+  /* HERO SECTION */
+.hero-section {
+  height: 60vh; /* ⬅️ increase to 60% of viewport height */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+  .bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  .overlay {
+    z-index: 0;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 2rem 1rem;
+  }
+
+  /* EXPLORE SECTION */
+  .explore-title {
+    font-size: 2rem;
+  }
+
+  .explore-divider {
+    width: 60px;
+  }
+
+  .section-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* CAROUSEL WRAPPER FIX */
+  .carousel-wrapper {
+    padding: 40px 0;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+  }
+
+  .carousel-wrapper .overlay {
+    padding: 0;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .carousel {
+    flex-direction: column;
+    align-items: center;
+    overflow: visible;
+    width: 100%;
+    gap: 20px;
+    padding: 0;
+  }
+
+  .card {
+    width: 90%;
+    margin: 0 auto 20px;
+    filter: none !important;
+    opacity: 1 !important;
+    transform: scale(1) !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  }
+
+  .card img {
+    height: 160px;
+    object-fit: cover;
+  }
+
+  .description .title {
+    font-size: 1.4rem;
+  }
+
+  .description p {
+    font-size: 0.95rem;
+  }
+
+  .nav {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .explore-title {
+    font-size: 1.6rem;
+  }
+
+  .card img {
+    height: 150px;
+  }
+
+  .description .title {
+    font-size: 1.2rem;
+  }
+
+  .description p {
+    font-size: 0.9rem;
+  }
 }

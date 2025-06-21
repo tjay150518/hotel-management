@@ -11,8 +11,9 @@ import { SharedModule } from '../../shared/shared.module';
 export class AboutUsComponent {
   activeSection: any;
   animateSignatureHeading = false;
-  constructor(private ngZone: NgZone) { }
+  constructor(private ngZone: NgZone) {}
   activeImage: string = '';
+  isMobile = false;
 
   images: string[] = ['assets/IMG_0967.JPG'];
 
@@ -90,16 +91,25 @@ export class AboutUsComponent {
   ];
 
   ngOnInit() {
+    this.checkViewport();
+    window.addEventListener('resize', this.checkViewport.bind(this));
+
     // Set the first one as the default active on load
-    this.setActive(this.sections[0]);
+    // this.setActive(this.sections[0]);
   }
+  checkViewport() {
+    this.isMobile = window.innerWidth <= 768;
+  }
+
   ngAfterViewInit(): void {
     this.observeHeadingSection();
   }
 
   setActive(section: any) {
-    this.activeSection = section;
-    this.activeImage = section.bg;
+    if (window.innerWidth > 768) {
+      this.activeSection = section;
+      this.activeImage = section.bg;
+    }
   }
 
   getBgPosition(index: number): string {
@@ -120,5 +130,12 @@ export class AboutUsComponent {
     );
 
     observer.observe(section);
+  }
+
+  clearActive() {
+    if (window.innerWidth > 768) {
+      this.activeSection = null;
+      this.activeImage = '';
+    }
   }
 }

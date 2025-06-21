@@ -24,7 +24,7 @@ export class HomePageComponent implements AfterViewInit {
   activeIndex = 1;
   backgroundLoaded = false;
 
-  constructor(private zone: NgZone, private cdr: ChangeDetectorRef) { }
+  constructor(private zone: NgZone, private cdr: ChangeDetectorRef) {}
 
   ngAfterViewInit() {
     const observer = new IntersectionObserver(

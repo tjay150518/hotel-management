@@ -83,3 +83,57 @@
 .nav-btn:hover {
   background-color: rgba(255, 255, 255, 0.4);
 }
+@media (max-width: 768px) {
+  .carousel-container {
+    height: 60vh;
+  }
+
+  .carousel-overlay {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+
+  .nav-btn {
+    font-size: 2rem;
+    padding: 0.4rem 0.8rem;
+    margin: 1rem 0;
+  }
+
+  .card {
+    padding: 1.5rem 1rem;
+    font-size: 0.95rem;
+    max-width: 90%;
+  }
+
+  .card h2 {
+    font-size: 1.5rem;
+  }
+
+  .card p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-container {
+    height: 50vh;
+  }
+
+  .nav-btn {
+    font-size: 1.8rem;
+    padding: 0.3rem 0.7rem;
+  }
+
+  .card {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .card h2 {
+    font-size: 1.3rem;
+  }
+
+  .card p {
+    font-size: 0.95rem;
+  }
+}

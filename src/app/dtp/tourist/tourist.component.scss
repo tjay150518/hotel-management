@@ -1,0 +1,59 @@
+.jaunpur-showcase {
+  background: url('/assets/haldi1.jpg') no-repeat center center / cover;
+  position: relative;
+  overflow: hidden;
+
+  .glass-banner {
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    max-width: 600px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  }
+
+  .temple-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+
+    .temple-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      overflow: hidden;
+      width: 200px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+      }
+
+      .temple-info {
+        padding: 10px;
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(5px);
+        color: white;
+        text-align: center;
+
+        h5 {
+          font-size: 16px;
+          margin-bottom: 5px;
+          font-weight: 600;
+        }
+
+        .rating {
+          font-size: 14px;
+          color: #ffe27a;
+        }
+      }
+    }
+  }
+}

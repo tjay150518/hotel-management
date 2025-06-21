@@ -206,7 +206,7 @@ export class WordToPdfService {
   async generateDocument(data: any, templatePath: any): Promise<void> {
     try {
       // Load the template file as binary
-      // const templatePath = 'assets/Invoice_dtp.docx';
+      // const templatePath = '/assets/Invoice_dtp.docx';
       const response = await fetch(templatePath);
       const templateContent = await response.arrayBuffer();
 

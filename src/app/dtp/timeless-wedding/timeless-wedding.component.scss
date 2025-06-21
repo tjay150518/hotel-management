@@ -256,3 +256,86 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .about-us-heading {
+    font-size: 1.8rem;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .about-us-heading .line {
+    display: none;
+  }
+
+  .green-tree-title {
+    font-size: 1.7rem;
+  }
+
+  .green-tree-description {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .wedding-section {
+    .scroll-menu {
+      flex-direction: row;
+      padding: 0 10px;
+
+      .arrow-btn {
+        font-size: 20px;
+        padding: 0 8px;
+      }
+
+      .menu-items-wrapper {
+        .menu-item {
+          padding: 8px 12px;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .tab-content {
+      flex-direction: column;
+      align-items: center;
+
+      .tab-image {
+        width: 100%;
+        padding-right: 0 !important;
+        margin-bottom: 20px;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      .tab-text {
+        text-align: center;
+        padding: 0 15px;
+
+        .heading-line {
+          flex-direction: column;
+          gap: 8px;
+
+          .line {
+            display: none;
+          }
+
+          .tab-heading {
+            font-size: 1.5rem;
+            white-space: normal;
+          }
+        }
+
+        .tab-subtitle {
+          font-size: 14px;
+        }
+
+        .tab-description {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

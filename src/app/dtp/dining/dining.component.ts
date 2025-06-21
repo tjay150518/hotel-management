@@ -12,13 +12,13 @@ export class DiningComponent {
   autoScrollInterval: any;
 
   @ViewChild('scrollContainer', { static: false }) scrollContainer!: ElementRef;
-  private images: string[] = ['../../../assets/test5.jpg'];
+  private images: string[] = ['assets/test5.jpg'];
   backgroundImageUrl: string = this.images[0];
 
   private currentIndex1 = 0;
   animateSignatureHeading = false;
 
-  constructor(private renderer: Renderer2) { }
+  constructor(private renderer: Renderer2) {}
 
   ngOnInit(): void {
     this.currentImageIndexes = new Array(this.hotels.length).fill(0);
@@ -29,51 +29,31 @@ export class DiningComponent {
   hotels = [
     {
       title: 'Delicious Noodles Delight',
-      images: [
-        'assets/nod1.jpg',
-        'assets/nod2.jpg',
-        'assets/nod3.jpg',
-      ],
+      images: ['assets/nod1.jpg', 'assets/nod2.jpg', 'assets/nod3.jpg'],
       description:
         'Freshly cooked noodles with vibrant veggies and authentic spices.',
     },
     {
       title: 'Juicy Gourmet Steaks',
-      images: [
-        'assets/steak1.jpg',
-        'assets/steak2.jpg',
-        'assets/steak3.jpg',
-      ],
+      images: ['assets/steak1.jpg', 'assets/steak2.jpg', 'assets/steak3.jpg'],
       description:
         'Savor the taste of perfectly cooked steaks with rich flavors.',
     },
     {
       title: 'Creamy Ice Cream Treats',
-      images: [
-        'assets/ice1.jpg',
-        'assets/ice2.jpg',
-        'assets/ice3.jpg',
-      ],
+      images: ['assets/ice1.jpg', 'assets/ice2.jpg', 'assets/ice3.jpg'],
       description:
         'Delightful creamy ice creams with a variety of flavors and toppings.',
     },
     {
       title: 'Exquisite Seafood Platter',
-      images: [
-        'assets/sea1.jpg',
-        'assets/sea2.jpeg',
-        'assets/sea3.jpg',
-      ],
+      images: ['assets/sea1.jpg', 'assets/sea2.jpeg', 'assets/sea3.jpg'],
       description:
         'Fresh seafood delicacies with vibrant flavors and elegant presentation.',
     },
     {
       title: 'Decadent Chocolate Desserts',
-      images: [
-        'assets/choco1.jpg',
-        'assets/choco2.jpg',
-        'assets/choco3.jpg',
-      ],
+      images: ['assets/choco1.jpg', 'assets/choco2.jpg', 'assets/choco3.jpg'],
       description:
         'Rich and smooth chocolate desserts to satisfy your sweet cravings.',
     },

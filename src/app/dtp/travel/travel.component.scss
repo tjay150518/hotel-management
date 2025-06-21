@@ -2,7 +2,6 @@
   position: relative;
   height: 70vh;
   background-color: #a98037;
-  background-image: url('/assets/IMG_0967.JPG');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -18,7 +17,6 @@
     transform: scale(1.1);
     opacity: 0;
   }
-
   100% {
     transform: scale(1);
     opacity: 1;
@@ -28,10 +26,7 @@
 .hero-section::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   background-image: inherit;
   background-position: center;
   background-repeat: no-repeat;
@@ -43,10 +38,7 @@
 
 .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   background: rgba(0, 0, 0, 0.4);
   z-index: 1;
 }
@@ -87,7 +79,6 @@
     opacity: 0;
     transform: translateY(20px);
   }
-
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -105,11 +96,9 @@
 .about-us-heading .line {
   flex-grow: 1;
   height: 3px;
-  background: #a98037;
-  /* goldish color */
+  background: #a98037; /* goldish color */
   border-radius: 3px;
 }
-
 .carousel-container {
   display: flex;
   align-items: center;
@@ -134,8 +123,7 @@
   flex: 0 0 33.33%;
   max-width: 33.33%;
   margin: 0 0.5rem;
-  background: rgba(34, 34, 34, 0.5);
-  /* semi-transparent dark */
+  background: rgba(34, 34, 34, 0.5); /* semi-transparent dark */
   color: #fff;
   text-align: center;
   transition: transform 0.5s ease, opacity 0.5s ease;
@@ -144,21 +132,17 @@
   z-index: 1;
   padding: 1rem;
   border-radius: 12px;
-  backdrop-filter: blur(6px);
-  /* Optional: gives a frosted glass effect */
+  backdrop-filter: blur(6px); /* Optional: gives a frosted glass effect */
   -webkit-backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  /* Optional subtle border */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Optional subtle border */
 }
 
 .carousel-card.active-card {
   transform: scale(1);
   opacity: 1;
-  background: rgba(51, 51, 51, 0.7);
-  /* darker for active card */
+  background: rgba(51, 51, 51, 0.7); /* darker for active card */
   z-index: 2;
 }
-
 .carousel-card img {
   width: 100%;
   height: 250px;
@@ -197,7 +181,6 @@
   cursor: pointer;
   z-index: 10;
 }
-
 .about-green-tree.animate {
   opacity: 1;
   transform: translateY(0);
@@ -222,8 +205,7 @@
   margin-bottom: 20px;
   position: relative;
   display: inline-block;
-  color: #a98037;
-  /* a fresh green */
+  color: #a98037; /* a fresh green */
 }
 
 .green-tree-description {
@@ -232,4 +214,77 @@
   max-width: 650px;
   margin: 0 auto 40px;
   color: #444;
+}
+/* Responsive: Tablets (up to 768px) */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 55vh;
+  }
+
+  .about-us-heading {
+    font-size: 2rem;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .carousel-card {
+    flex: 0 0 80%;
+    max-width: 80%;
+    margin: 0 0.5rem;
+  }
+
+  .carousel-card img {
+    height: 200px;
+  }
+
+  .green-tree-title {
+    font-size: 2rem;
+  }
+
+  .green-tree-description {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .carousel-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .carousel-wrapper {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 1.5rem;
+  }
+
+  .carousel-card {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    transform: scale(1);
+    opacity: 1;
+    background: rgba(51, 51, 51, 0.7);
+    z-index: 2;
+  }
+
+  .carousel-card img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .nav-btn,
+  .side-text {
+    display: none;
+  }
+
+  .card-content {
+    padding: 1rem;
+  }
 }

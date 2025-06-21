@@ -18,7 +18,6 @@
     transform: scale(1.1);
     opacity: 0;
   }
-
   100% {
     transform: scale(1);
     opacity: 1;
@@ -28,10 +27,7 @@
 .hero-section::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   background-image: inherit;
   background-position: center;
   background-repeat: no-repeat;
@@ -43,10 +39,7 @@
 
 .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   background: rgba(0, 0, 0, 0.4);
   z-index: 1;
 }
@@ -87,7 +80,6 @@
     opacity: 0;
     transform: translateY(20px);
   }
-
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -105,11 +97,9 @@
 .about-us-heading .line {
   flex-grow: 1;
   height: 3px;
-  background: #a98037;
-  /* goldish color */
+  background: #a98037; /* goldish color */
   border-radius: 3px;
 }
-
 .about-green-tree.animate {
   opacity: 1;
   transform: translateY(0);
@@ -126,7 +116,6 @@
   transform: translateY(20px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
-
 .tier-heading {
   font-family: 'Playfair Display', serif;
   font-weight: 600;
@@ -194,7 +183,6 @@
   0% {
     transform: translateX(-100%) rotate(25deg);
   }
-
   100% {
     transform: translateX(100%) rotate(25deg);
   }
@@ -233,7 +221,6 @@
     background-color: #a98037;
   }
 }
-
 .modal-header {
   border-bottom: none;
 }
@@ -242,12 +229,10 @@
   padding: 6px 0;
   font-weight: 500;
 }
-
 .table th,
 .table td {
   vertical-align: middle;
 }
-
 th.text-start {
   font-weight: 600;
 }
@@ -265,37 +250,31 @@ h6 {
   background-color: #f4f4f4;
 }
 
-.table-striped>tbody>tr:nth-of-type(odd) {
+.table-striped > tbody > tr:nth-of-type(odd) {
   background-color: #fafafa;
 }
 
 .benefit-modal .modal-header {
   background: linear-gradient(135deg, #343a40, #1d2124);
 }
-
 .text-success {
   font-weight: bold;
   color: green;
 }
-
 .text-danger {
   font-weight: bold;
   color: red;
 }
-
 /* Tier Color Backgrounds */
 .platinum-tier {
   background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
 }
-
 .gold-tier {
   background: linear-gradient(135deg, #d4af37, #c49b3b);
 }
-
 .silver-tier {
   background: linear-gradient(135deg, #c0c0c0, #a0a0a0);
 }
-
 .copper-tier {
   background: linear-gradient(135deg, #cd7f32, #b87333);
 }
@@ -304,7 +283,6 @@ h6 {
 .benefit-modal .modal-content {
   border-radius: 20px;
 }
-
 .benefit-modal .modal-header {
   background: linear-gradient(to right, #a98037, #c49b3b);
 }

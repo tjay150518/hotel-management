@@ -204,3 +204,79 @@
   /* goldish color */
   border-radius: 3px;
 }
+
+@media (max-width: 768px) {
+  .offer-container {
+    flex-direction: column;
+    padding: 20px 10px;
+    gap: 20px;
+  }
+
+  .offer-card {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    transform: translateY(20px);
+    border-radius: 10px;
+  }
+
+  .offer-card.in-view {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .offer-card img {
+    height: 180px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .offer-content {
+    padding: 15px;
+    text-align: left;
+  }
+
+  .offer-content h4 {
+    font-size: 16px;
+  }
+
+  .offer-content p {
+    font-size: 13px;
+  }
+
+  .validity {
+    font-size: 13px;
+  }
+
+  .btn-join {
+    font-size: 14px;
+    padding: 8px 16px;
+    width: 100%;
+  }
+
+  .know-more {
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  .about-us-heading {
+    font-size: 2rem;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .about-us-heading .line {
+    display: none;
+  }
+
+  .hero-section {
+    height: 50vh;
+  }
+
+  .hero-content {
+    padding: 0 10px;
+  }
+}

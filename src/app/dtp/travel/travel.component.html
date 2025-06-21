@@ -37,21 +37,15 @@
       class="carousel-card"
       *ngFor="let card of cards; let i = index"
       [ngClass]="{
-        'prev-card': i === getPrevIndex(),
         'active-card': i === currentIndex,
-        'next-card': i === getNextIndex()
+        'mobile-show': true
       }"
     >
-      <ng-container *ngIf="i === currentIndex; else sideCard">
-        <img [src]="card.image" alt="Card Image" />
-        <div class="card-content">
-          <h3>{{ card.title }}</h3>
-          <p>{{ card.description }}</p>
-        </div>
-      </ng-container>
-      <ng-template #sideCard>
-        <div class="side-text">{{ card.title }}</div>
-      </ng-template>
+      <img [src]="card.image" alt="Card Image" />
+      <div class="card-content">
+        <h3>{{ card.title }}</h3>
+        <p>{{ card.description }}</p>
+      </div>
     </div>
   </div>
 

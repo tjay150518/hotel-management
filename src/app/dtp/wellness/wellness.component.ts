@@ -13,7 +13,7 @@ export class WellnessComponent {
 
   backgroundImageUrl: string = this.images[0];
   animateSignatureHeading = false;
-  constructor(private ngZone: NgZone) { }
+  constructor(private ngZone: NgZone) {}
   ngAfterViewInit(): void {
     this.observeHeadingSection();
   }

@@ -16,6 +16,7 @@ import { EpicureComponent } from './dtp/epicure/epicure.component';
 import { BookStayComponent } from './dtp/book-stay/book-stay.component';
 import { NeupassComponent } from './dtp/neupass/neupass.component';
 import { BillingComponent } from './dtp/billing/billing.component';
+import { TouristComponent } from './dtp/tourist/tourist.component';
 export const routes: Routes = [
   // Default route now redirects to dashboard under Hotel
   { path: '', redirectTo: 'Hotel/Home-page', pathMatch: 'full' },
@@ -41,6 +42,7 @@ export const routes: Routes = [
       { path: 'book-stay', component: BookStayComponent },
       { path: 'neupass', component: NeupassComponent },
       { path: 'billing', component: BillingComponent },
+      { path: 'tourist', component: TouristComponent },
     ],
   },
 ];

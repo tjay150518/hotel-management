@@ -273,3 +273,67 @@
 .card-wrapper::-webkit-scrollbar {
   display: none;
 }
+
+@media (max-width: 768px) {
+  .about-us-heading {
+    font-size: 2rem;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .about-us-heading .line {
+    display: none;
+  }
+
+  .green-tree-title {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
+  .green-tree-description {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .commitment-carousel {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  .card-wrapper {
+    flex-direction: column;
+    gap: 20px;
+    overflow-x: hidden;
+    padding: 15px 0;
+  }
+
+  .commitment-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: unset;
+    transform: none;
+    filter: none;
+    opacity: 1;
+  }
+
+  .commitment-card img {
+    width: 100%;
+    height: 180px;
+    /* smaller height for better mobile fit */
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .card-body {
+    padding: 15px;
+  }
+}

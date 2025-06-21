@@ -199,3 +199,100 @@
     transform: rotateY(180deg);
   }
 }
+
+@media (max-width: 768px) {
+  #epicureCarousel {
+    height: 60vh;
+  }
+
+  .slide-img {
+    height: 60vh;
+    object-fit: cover;
+  }
+
+  .fixed-overlay {
+    bottom: 20px;
+    left: 20px;
+    padding: 15px 20px;
+    border-radius: 6px;
+  }
+
+  .epicure-title {
+    font-size: 2rem;
+  }
+
+  .epicure-desc {
+    font-size: 1rem;
+  }
+
+  .epicure-hero {
+    height: 60vh;
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    .hero-content {
+      padding: 25px;
+    }
+  }
+
+  .epicure-experiences {
+    padding: 40px 20px;
+
+    .section-title {
+      font-size: 1.5rem;
+    }
+
+    .card img {
+      height: 200px;
+    }
+
+    .card .overlay {
+      font-size: 0.9rem;
+      padding: 15px;
+    }
+  }
+
+  .epicure-testimonials {
+    padding: 40px 20px;
+
+    .section-title {
+      font-size: 1.5rem;
+    }
+
+    .testimonial {
+      padding: 20px;
+
+      p {
+        font-size: 0.95rem;
+      }
+
+      h5 {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .epicure-flip-services {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+  }
+
+  .flip-card {
+    width: 100%;
+    max-width: 250px;
+    height: 200px;
+  }
+
+  .flip-card .flip-front,
+  .flip-card .flip-back {
+    font-size: 0.95rem;
+    padding: 15px;
+  }
+}

@@ -33,14 +33,22 @@
     class="col-md-3 hotel-card"
     *ngFor="let section of sections; let i = index"
     [ngStyle]="{
-      'background-image': 'url(' + activeImage + ')',
+      'background-image': isMobile
+        ? 'url(' + section.bg + ')'
+        : 'url(' + activeImage + ')',
       'background-position': getBgPosition(i)
     }"
     (mouseenter)="setActive(section)"
+    (mouseleave)="clearActive()"
     [class.active]="activeSection?.title === section.title"
-    [class.dimmed]="activeSection?.title !== section.title"
+    [class.dimmed]="
+      !isMobile && activeSection && activeSection?.title !== section.title
+    "
   >
-    <div class="overlay-content" *ngIf="activeSection?.title === section.title">
+    <div
+      class="overlay-content"
+      *ngIf="activeSection?.title === section.title || isMobile"
+    >
       <h4>{{ section.title }}</h4>
       <ul>
         <li *ngFor="let topic of section.topics">{{ topic }}</li>

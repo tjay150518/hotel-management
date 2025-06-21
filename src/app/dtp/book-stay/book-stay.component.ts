@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrl: './book-stay.component.scss',
 })
 export class BookStayComponent {
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
   hotelRooms = [
     {

@@ -25,18 +25,21 @@
   }
 }
 
-@keyframes logoPopEnhanced {
+@keyframes bounceInFade {
   0% {
     opacity: 0;
-    transform: scale(0.6) rotate(-10deg);
+    transform: scale(0.3) translateY(-30px);
   }
   50% {
-    opacity: 0.8;
-    transform: scale(1.1) rotate(4deg);
+    opacity: 0.7;
+    transform: scale(1.05) translateY(10px);
+  }
+  70% {
+    transform: scale(0.95) translateY(-5px);
   }
   100% {
     opacity: 1;
-    transform: scale(1) rotate(0deg);
+    transform: scale(1) translateY(0);
   }
 }
 
@@ -44,7 +47,7 @@
   height: 80px;
   max-width: 600px;
   opacity: 0;
-  animation: logoPopEnhanced 2.5s ease-in-out infinite;
+  animation: bounceInFade 1.6s ease forwards;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
@@ -114,48 +117,68 @@ content: '';
 
 .custom-mega-dropdown {
   position: absolute;
-  left: 0;
   top: 100%;
+  left: 0;
   width: max-content;
   min-width: 800px;
   background-color: #fff;
-  border: none;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
-  display: none;
   z-index: 999;
+  display: none;
   animation: dropdownEnter 0.4s ease forwards;
+
+  &.show {
+    display: block;
+  }
+
+  img {
+    max-width: 180px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+
+  img:hover {
+    transform: scale(1.05);
+  }
+
+  .dropdown-item-text {
+    font-size: 15px;
+    font-weight: 600;
+    color: #2b2b2b;
+    text-decoration: none;
+
+    &:hover {
+      color: #b49549;
+    }
+  }
 }
 
-.nav-item.dropdown:hover .custom-mega-dropdown {
-  display: block;
+.nav-item.dropdown {
+  position: relative;
 }
 
-.custom-mega-dropdown img {
-  max-width: 200px;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
-}
-
-.custom-mega-dropdown img:hover {
-  transform: scale(1.05);
-}
-
-.dropdown-item-text {
-  font-size: 15px;
-  font-weight: 600;
-  color: #2b2b2b;
-  text-decoration: none;
-}
-
-.dropdown-item-text:hover {
-  color:#2b2b2b;
-}
 .arrow-icon {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   margin-left: 6px;
   transition: transform 0.3s ease;
   display: inline-block;
 }
+
+.nav-item.dropdown:hover .arrow-icon {
+  transform: rotate(180deg);
+}
+
+@keyframes dropdownEnter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 /* Rotate arrow on hover */
 .nav-item.dropdown:hover .arrow-icon {
@@ -364,5 +387,112 @@ select {
 .guest-row button:disabled {
   background-color: #eee;
   cursor: not-allowed;
+}
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .navbar-brand {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .brand-logo {
+    display: block;
+    margin: 0 auto;
+    height: 50px;
+    max-width: 100%;
+  }
+
+  .navbar-collapse {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-link {
+    padding: 10px;
+    font-size: 1rem !important;
+    text-align: center;
+  }
+
+  .custom-mega-dropdown {
+    min-width: 100%;
+    left: 0;
+    padding: 10px !important;
+  }
+
+  .custom-mega-dropdown .dropdown-item-text {
+    font-size: 14px;
+  }
+
+  .custom-mega-dropdown img {
+    max-width: 100px;
+  }
+
+  .d-flex.align-items-center {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  .book-now-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Modal adjustments */
+  .modal-content {
+    width: 95%;
+    max-width: none;
+    border-radius: 8px;
+  }
+
+  .booking-card {
+    padding: 20px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr; /* Stack fields */
+    gap: 15px;
+  }
+
+  .book-now {
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  .guest-summary {
+    font-size: 13px;
+  }
+
+  .guest-row button {
+    width: 28px;
+    height: 28px;
+    font-size: 16px;
+  }
+
+  .guest-panel {
+    width: 100%;
+    left: 0;
+  }
+
+  .close-button {
+    font-size: 20px;
+    top: 10px;
+    right: 15px;
+  }
 }
 

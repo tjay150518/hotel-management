@@ -1,0 +1,25 @@
+<section class="jaunpur-showcase container-fluid py-5">
+  <div class="container position-relative">
+    <div class="glass-banner text-white p-5">
+      <h1 class="display-5 fw-bold">Jaunpur</h1>
+      <p class="lead">
+        A city of rich heritage and architectural brilliance.<br />
+        Discover iconic monuments like Shahi Qila, Atala Masjid, and more.
+      </p>
+    </div>
+
+    <div class="temple-gallery d-flex gap-4 mt-4">
+      <div
+        class="temple-card"
+        *ngFor="let place of historicalPlaces"
+        data-aos="fade-up"
+      >
+        <img [src]="place.image" [alt]="place.title" />
+        <div class="temple-info">
+          <h5>{{ place.title }}</h5>
+          <span class="rating">⭐ {{ place.rating }}/5.0</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

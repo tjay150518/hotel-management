@@ -44,21 +44,55 @@ export class NavBarComponent implements AfterViewInit {
     }, 100);
   }
 
-  // checkScroll() {
-  //   const offset =
-  //     window.pageYOffset ||
-  //     document.documentElement.scrollTop ||
-  //     document.body.scrollTop ||
-  //     0;
+  showDropdown = false;
 
-  //   // ✅ This line ensures transparent navbar on top, solid white when scrolled
-  //   this.isScrolled = offset > 50;
+  megaMenuItems = [
+    {
+      image: 'assets/more1.jpg',
+      label: 'Wellness',
+      link: '/Hotel/wellness',
+    },
+    {
+      image: 'assets/more2.jpg',
+      label: 'Timeless Wedding',
+      link: '/Hotel/timeless-wedding',
+    },
+    {
+      image: 'assets/more3.jpg',
+      label: 'Event',
+      link: '/Hotel/event',
+    },
+    // {
+    //   image: 'assets/more4.jpg',
+    //   label: 'Tourist',
+    //   link: '/Hotel/tourist',
+    // },
+    {
+      image: 'assets/IMG_0968.JPG',
+      label: 'Contact Us',
+      link: '/Hotel/resort',
+    },
+  ];
+  showMembershipDropdown = false;
 
-  //   // Change logo if needed
-  //   this.brandLogoUrl = this.isScrolled
-  //     ? 'assets/GT_Logo Final-06.png'
-  //     : 'assets/GT_Logo Final-05.png';
-  // }
+  membershipItems = [
+    {
+      image: 'assets/nav4.jpg',
+      label: 'Neupass',
+      link: '/Hotel/neupass',
+    },
+    {
+      image: 'assets/IMG_0974.JPG',
+      label: 'Epicure',
+      link: '/Hotel/epicure',
+    },
+    {
+      image: 'assets/IMG_0967.JPG',
+      label: 'Business Connect',
+      link: '/Hotel/members',
+    },
+  ];
+
   checkScroll() {
     const offset =
       window.pageYOffset ||
@@ -112,5 +146,31 @@ export class NavBarComponent implements AfterViewInit {
     };
 
     sessionStorage.setItem('guestSelection', JSON.stringify(guestData));
+  }
+  closeNavbar() {
+    const navbarToggler = document.querySelector(
+      '.navbar-toggler'
+    ) as HTMLElement;
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+
+    const isMobile = window.innerWidth <= 768;
+
+    if (
+      isMobile &&
+      navbarToggler &&
+      navbarCollapse?.classList.contains('show')
+    ) {
+      navbarToggler.click();
+    }
+  }
+  toggleMembershipDropdown(event: Event) {
+    event.preventDefault(); // prevent scrolling to top
+    if (!this.isDesktop()) {
+      this.showMembershipDropdown = !this.showMembershipDropdown;
+    }
+  }
+
+  isDesktop(): boolean {
+    return window.innerWidth > 768;
   }
 }

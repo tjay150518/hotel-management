@@ -14,7 +14,7 @@ export class EventComponent {
   animateSignatureHeading = false;
 
   backgroundImageUrl: string = this.images[0];
-  constructor(private ngZone: NgZone, private titleService: Title) { }
+  constructor(private ngZone: NgZone, private titleService: Title) {}
 
   ngAfterViewInit(): void {
     this.observeHeadingSection();

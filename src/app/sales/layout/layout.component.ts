@@ -40,7 +40,7 @@ interface SideNavToggle {
 export class SalesLayoutComponent {
   isLoading = false;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.router.events.subscribe((event) => {
